@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private double result;
     private boolean getResult;
     private boolean isDotClicked;
+    private Double numberOnScreen;
 
 
     @Override
@@ -32,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     public void clickOnDot(View view) {
         isDotClicked = true;
         textview.setText(textview.getText().toString()+".");
+    }
+
+    public void clickOnPlusMinos(View view) {
+        numberOnScreen = (-1)*Double.parseDouble(textview.getText().toString());
+        textview.setText(String.valueOf(numberOnScreen));
+        Log.i("numberOnScreen", ""+numberOnScreen);
     }
 
     public enum Operator {

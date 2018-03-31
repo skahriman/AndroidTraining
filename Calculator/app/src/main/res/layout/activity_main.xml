@@ -136,6 +136,7 @@
             android:id="@+id/plussminos"
             android:text="+/-"
             android:textSize="25dp"
+            android:onClick="clickOnPlusMinos"
             />
         <Button
             android:id="@+id/equal"
