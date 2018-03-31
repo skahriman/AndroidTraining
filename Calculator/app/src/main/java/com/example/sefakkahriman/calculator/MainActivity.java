@@ -2,6 +2,7 @@ package com.example.sefakkahriman.calculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,9 +12,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textview;
     private Operator operator;
     private double doubleNumber;
-    private int number1;
-    private int number2;
-    private String operandType;
     private double result;
     private boolean getResult;
 
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickOnOperator(View view){
-        if(getResult == false)
+        if(getResult)
             textview.setText("0");
         operator = getOperatorType(view);
         doubleNumber = Double.parseDouble(textview.getText().toString());
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     //
     public void clickOnNumber(View view) {
         Button btn = (Button)view;
-        if(getResult == true) {
+        if(getResult) {
             cClick(view);
             getResult = false;
         }
@@ -79,19 +77,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickOnEquals(View view) {
         if(!(textview.getText().toString().equals(""))){
-            Double doubleNumber2 = Double.parseDouble(textview.getText().toString());
+            Double nextNumber = Double.parseDouble(textview.getText().toString());
             switch (operator) {
                 case ADDITION:
-                    result = doubleNumber + doubleNumber2;
+                    result = doubleNumber + nextNumber;
                     break;
                 case SUBTRACTION:
-                    result = doubleNumber - doubleNumber2;
+                    result = doubleNumber - nextNumber;
                     break;
                 case MULTIPLICATION:
-                    result = doubleNumber * doubleNumber2;
+                    result = doubleNumber * nextNumber;
                     break;
                 case DIVISION:
-                    result = doubleNumber / doubleNumber2;
+                    result = doubleNumber / nextNumber;
                     break;
                 default:
                     System.out.println("error");
