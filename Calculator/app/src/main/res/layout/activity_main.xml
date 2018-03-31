@@ -130,6 +130,7 @@
             android:id="@+id/dot"
             android:text="."
             android:textSize="25dp"
+            android:onClick="clickOnDot"
             />
         <Button
             android:id="@+id/plussminos"

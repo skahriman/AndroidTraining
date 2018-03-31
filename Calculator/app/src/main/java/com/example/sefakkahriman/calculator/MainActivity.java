@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private double doubleNumber;
     private double result;
     private boolean getResult;
+    private boolean isDotClicked;
 
 
     @Override
@@ -26,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void cClick(View view) {
         textview.setText("");
+    }
+
+    public void clickOnDot(View view) {
+        isDotClicked = true;
+        textview.setText(textview.getText().toString()+".");
     }
 
     public enum Operator {
