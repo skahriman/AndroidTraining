@@ -30,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
         textview.setText("");
     }
 
+    public void clickOnOperator(View view){
+        if(getResult)
+            textview.setText("0");
+        operator = getOperatorType(view);
+        doubleNumber = Double.parseDouble(textview.getText().toString());
+        textview.setText("");
+    }
+
     public void clickOnDot(View view) {
         isDotClicked = true;
         textview.setText(textview.getText().toString()+".");
@@ -39,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         numberOnScreen = (-1)*Double.parseDouble(textview.getText().toString());
         textview.setText(String.valueOf(numberOnScreen));
         Log.i("numberOnScreen", ""+numberOnScreen);
+    }
+
+    public void clickOnBackspace(View view) {
+
     }
 
     public enum Operator {
@@ -63,14 +75,6 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return null;
         }
-    }
-
-    public void clickOnOperator(View view){
-        if(getResult)
-            textview.setText("0");
-        operator = getOperatorType(view);
-        doubleNumber = Double.parseDouble(textview.getText().toString());
-        textview.setText("");
     }
 
     //
