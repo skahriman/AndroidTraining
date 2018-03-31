@@ -1,0 +1,1 @@
+The screenshots (2 screetshot) for the completion of the GitCourse

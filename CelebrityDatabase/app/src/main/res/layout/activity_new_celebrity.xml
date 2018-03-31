@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewCelebrityActivity">
+
+    <!--Celebrity database-->
+    <TextView
+        android:text="Celebrity database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="Fist Name"
+        android:id="@+id/etFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="Last Name"
+        android:id="@+id/etLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="Title"
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSaveCelebrity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="handlingSQLite"
+        android:text="Save Celebrity"/>
+
+    <Button
+        android:id="@+id/btnViewAllCelebrities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="handlingViewCelebrities"
+        android:text="View all Celebrities"
+        />
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
