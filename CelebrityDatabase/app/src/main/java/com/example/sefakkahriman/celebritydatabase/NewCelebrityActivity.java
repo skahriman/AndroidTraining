@@ -5,20 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.example.sefakkahriman.celebritydatabase.data.LocalDataSource;
 import com.example.sefakkahriman.celebritydatabase.model.Person;
 
-
 public class NewCelebrityActivity extends AppCompatActivity {
 
     private EditText etFirstName;
     private EditText etLastName;
     private EditText etTitle;
-//    private TextView tvAllCelebrities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +29,10 @@ public class NewCelebrityActivity extends AppCompatActivity {
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
         etTitle = findViewById(R.id.etTitle);
-   //     tvAllCelebrities = findViewById(R.id.tvAllPersons);
 
     }
 
-    public void handlingSQLite(View view) {
+    public void saveCelebrity(View view) {
         LocalDataSource dataSource = new LocalDataSource(this);
 
         if(view.getId() == R.id.btnSaveCelebrity) {
@@ -51,7 +47,7 @@ public class NewCelebrityActivity extends AppCompatActivity {
         }
     }
 
-    public void handlingViewCelebrities(View view) {
+    public void onClickViewCelebrities(View view) {
         Intent intent = new Intent(getApplicationContext(), ViewCelebrityActivity.class);
         startActivity(intent);
     }

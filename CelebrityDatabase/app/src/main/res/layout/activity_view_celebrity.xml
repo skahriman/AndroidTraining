@@ -9,7 +9,7 @@
     tools:context=".ViewCelebrityActivity">
 
     <ListView
-        android:id="@+id/tvAllCelebrities"
+        android:id="@+id/lvAllCelebrities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Celebrity view"

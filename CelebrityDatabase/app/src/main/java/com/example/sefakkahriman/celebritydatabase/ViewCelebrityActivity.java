@@ -1,21 +1,14 @@
 package com.example.sefakkahriman.celebritydatabase;
 
-import android.content.ContentValues;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-
-
-import com.example.sefakkahriman.celebritydatabase.data.LocalDataContract;
 import com.example.sefakkahriman.celebritydatabase.data.LocalDataSource;
 import com.example.sefakkahriman.celebritydatabase.model.Person;
 
 import java.util.List;
-//import com.example.sefakkahriman.celebritydatabase.model.Person;
 
 public class ViewCelebrityActivity extends AppCompatActivity {
 
@@ -44,7 +37,7 @@ public class ViewCelebrityActivity extends AppCompatActivity {
 
         ArrayAdapter<String> itemsAdapter =
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
-        ListView myView = findViewById(R.id.tvAllCelebrities);
+        ListView myView = findViewById(R.id.lvAllCelebrities);
 
         myView.setAdapter(itemsAdapter);
     }
@@ -54,7 +47,7 @@ public class ViewCelebrityActivity extends AppCompatActivity {
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
         etTitle = findViewById(R.id.etTitle);
-        tvAllCelebrities = findViewById(R.id.tvAllCelebrities);
+        tvAllCelebrities = findViewById(R.id.lvAllCelebrities);
 
     }
 }

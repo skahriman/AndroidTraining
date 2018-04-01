@@ -13,32 +13,28 @@ import java.util.List;
 
 public class LocalDataSource extends SQLiteOpenHelper  {
 
-    public LocalDataSource(Context context)
-    {
+    public LocalDataSource(Context context) {
         super(context, LocalDataContract.NAME, null, LocalDataContract.VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase)
-    {
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(LocalDataContract.CREATE_PERSON_TABLE);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
-    {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
 
-    public long savePerson(Person person)
-    {
+    public long savePerson(Person person) {
         SQLiteDatabase database = getWritableDatabase();
 
         //create the content value for saving the object
         ContentValues contentValues = new ContentValues();
         contentValues.put(LocalDataContract.Person.FIRST_NAME, person.getFirstName());
         contentValues.put(LocalDataContract.Person.LAST_NAME, person.getLastName());
-        contentValues.put(LocalDataContract.Person.GENDER, person.getTitle());
+        contentValues.put(LocalDataContract.Person.TITLE, person.getTitle());
 
         //instert the object in the table
         long rowNumber = database.insert(LocalDataContract.Person.TABLE, null, contentValues);
@@ -47,8 +43,7 @@ public class LocalDataSource extends SQLiteOpenHelper  {
         return rowNumber;
     }
 
-    public List<Person> getAllPerson()
-    {
+    public List<Person> getAllPerson() {
         SQLiteDatabase database = getWritableDatabase();
         List<Person> personList = new ArrayList<>();
         Cursor cursor = database.rawQuery(LocalDataContract.Person.GETALL + LocalDataContract.Person.TABLE,null);

@@ -1,9 +1,10 @@
 package com.example.sefakkahriman.celebritydatabase.model;
 
 public class Person {
-    String firstName;
-    String lastName;
-    String title;
+
+    private String firstName;
+    private String lastName;
+    private String title;
 
     public Person(String firstName, String lastName, String title) {
         this.firstName = firstName;

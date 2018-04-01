@@ -10,7 +10,8 @@
 
     <!--Celebrity database-->
     <TextView
-        android:text="Celebrity database"
+        android:gravity="center"
+        android:text="Add Celebrity to the database"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -36,14 +37,14 @@
         android:id="@+id/btnSaveCelebrity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="handlingSQLite"
+        android:onClick="saveCelebrity"
         android:text="Save Celebrity"/>
 
     <Button
         android:id="@+id/btnViewAllCelebrities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="handlingViewCelebrities"
+        android:onClick="onClickViewCelebrities"
         android:text="View all Celebrities"
         />
 
