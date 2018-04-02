@@ -34,8 +34,30 @@ public class MainActivity extends FragmentActivity {
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
 
-                        Intent intent = new Intent(getApplicationContext(), Contacts.class);
-                        startActivity(intent);
+                        String menu = menuItem.toString();
+
+                        switch (menu) {
+                            case "Phone":
+                                Intent intent1 = new Intent(getApplicationContext(), Contacts.class);
+                                startActivity(intent1);
+                                break;
+
+                            case "Balance":
+                                Intent intent2 = new Intent(getApplicationContext(), Balance.class);
+                                startActivity(intent2);
+                                break;
+
+                            case "Home":
+                                Intent intent3 = new Intent(getApplicationContext(), webview.class);
+                                startActivity(intent3);
+                                break;
+
+
+                            default:
+                                return false;
+
+                        }
+
 
                         //if(menuItem.getTitle().equals("Contacts"))
 
