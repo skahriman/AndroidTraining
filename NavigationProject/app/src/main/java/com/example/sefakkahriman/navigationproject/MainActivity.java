@@ -1,13 +1,16 @@
 package com.example.sefakkahriman.navigationproject;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
-
-public class MainActivity extends AppCompatActivity {
+//use FragmentActivity
+public class MainActivity extends FragmentActivity {
 
     private DrawerLayout mDrawerLayout;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -29,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
+
+                        Intent intent = new Intent(getApplicationContext(), Contacts.class);
+                        startActivity(intent);
+
+                        //if(menuItem.getTitle().equals("Contacts"))
+
 
                         return true;
                     }
