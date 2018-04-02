@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListLikeViews</string>
+    <string name="title_activity_recycler">activity_recycler</string>
+    <string name="title_activity_simple_list_item">simple_list_item</string>
+</resources>
