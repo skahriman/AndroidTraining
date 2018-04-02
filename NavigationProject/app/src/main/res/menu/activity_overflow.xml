@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/new_game"
+        android:title="item_1"
+        app:showAsAction="never"/>
+    <item android:id="@+id/help"
+        app:showAsAction="never"
+        android:title="item_2" />
+    <item android:id="@+id/backSpace"
+        app:showAsAction="always"
+        android:icon="@drawable/backbutton"
+        android:title="BackSpace" />
+
+</menu>

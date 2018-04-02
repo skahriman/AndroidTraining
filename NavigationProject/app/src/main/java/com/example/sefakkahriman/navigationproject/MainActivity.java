@@ -5,12 +5,14 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 //use FragmentActivity
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
@@ -39,6 +41,7 @@ public class MainActivity extends FragmentActivity {
                         switch (menu) {
                             case "Phone":
                                 Intent intent1 = new Intent(getApplicationContext(), Contacts.class);
+                                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent1);
                                 break;
 
@@ -65,5 +68,22 @@ public class MainActivity extends FragmentActivity {
                         return true;
                     }
                 });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_overflow, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.backSpace:
+                finishActivity(0);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

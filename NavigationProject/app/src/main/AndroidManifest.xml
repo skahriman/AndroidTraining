@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".Contacts" />
         <activity android:name=".Balance" />
-        <activity android:name=".webview"></activity>
+        <activity android:name=".webview" />
     </application>
 
 </manifest>
