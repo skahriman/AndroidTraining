@@ -9,10 +9,11 @@ public class AnimalFactory {
 
 
     private static List<Animal> animalList;
-
+    private static List<Animal> typeList;
 
     public static List<Animal> createAnimals() {
         animalList = new ArrayList<>();
+        typeList = new ArrayList<>();
 
         animalList.add(new Animal("Tiger", "400", "Cat"));
         animalList.add(new Animal("Python", "40", "Snake"));
@@ -52,5 +53,14 @@ public class AnimalFactory {
         return animalList;
     }
 
+    public static List<Animal> getAnilamsOfSameType (String str) {
+        createAnimals();
+        getMoreAnimals();
 
+        for(int i = 0; i < animalList.size(); i ++) {
+            if(animalList.get(i).getType().equals(str))
+                typeList.add(animalList.get(i));
+        }
+        return typeList;
+    }
 }

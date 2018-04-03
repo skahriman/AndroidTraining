@@ -63,7 +63,7 @@ public class SimpleLIstView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent will be here
                 Intent intent = new Intent(SimpleLIstView.this, ListViewOfSameKind.class);
-                intent.putExtra("Posion of animal", animaList.get(position));
+                intent.putExtra("Type", animaList.get(position));
                 startActivity(intent);
             }
         });
