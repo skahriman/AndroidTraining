@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ZooProject</string>
     <string name="title_activity_list_view">ListView</string>
+    <string name="title_activity_list_type_of_animals">ListTypeOfAnimals</string>
+    <string name="title_activity_list_of_same_animals">ListOfSameAnimals</string>
+    <string name="title_activity_list_view_of_same_kind">ListViewOfSameKind</string>
 </resources>

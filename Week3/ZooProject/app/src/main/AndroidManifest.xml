@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SimpleLIstView"></activity>
+        <activity android:name=".SimpleLIstView" />
+        <activity android:name=".ListViewOfSameKind"></activity>
     </application>
 
 </manifest>

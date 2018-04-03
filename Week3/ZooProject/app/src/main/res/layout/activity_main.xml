@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="click to view animals"
         android:textSize="50dp"
-        android:onClick="onClickShowAnimals"
+        android:onClick="onClickViewAnimals"
         />
 
 </LinearLayout>

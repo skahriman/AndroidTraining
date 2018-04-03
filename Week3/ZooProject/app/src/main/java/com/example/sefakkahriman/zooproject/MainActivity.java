@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClickShowAnimals(View view) {
+    public void onClickViewAnimals(View view) {
         Intent intent = new Intent(this, SimpleLIstView.class);
         startActivity(intent);
     }
