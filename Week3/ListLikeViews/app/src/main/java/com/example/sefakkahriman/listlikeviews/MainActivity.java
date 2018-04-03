@@ -29,12 +29,9 @@ public class MainActivity extends AppCompatActivity implements CustomListAdapter
 
     }
 
-    private void bindCustomListView() {
-        CustomListAdapter customListAdapter =
-                new CustomListAdapter(this,
-                        R.layout.simple_list_item,
-                        AnimalFactory.createAnimals());
-        lvCustom.setAdapter(customListAdapter);
+    private void bindViews() {
+        lvSimple = findViewById(R.id.lvSimple);
+        lvCustom = findViewById(R.id.lvCustom);
     }
 
     private void bindSimpleList() {
@@ -47,11 +44,13 @@ public class MainActivity extends AppCompatActivity implements CustomListAdapter
         lvSimple.setOnItemClickListener(new SimpleListListener());
     }
 
-    private void bindViews() {
-        lvSimple = findViewById(R.id.lvSimple);
-        lvCustom = findViewById(R.id.lvCustom);
+    private void bindCustomListView() {
+        CustomListAdapter customListAdapter =
+                new CustomListAdapter(this,
+                        R.layout.simple_list_item,
+                        AnimalFactory.createAnimals());
+        lvCustom.setAdapter(customListAdapter);
     }
-
 
     @Override
     public void onItemClick(Animal animal) {
