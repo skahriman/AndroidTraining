@@ -21,6 +21,7 @@ public class SimpleLIstView extends AppCompatActivity {
 
    // private ListView lvSimple ;
     private ListView listView;
+    private List<String> animaList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class SimpleLIstView extends AppCompatActivity {
 
     public void bindSimpleList() {
 
-        List<String> animaList = AnimalFactory.createSimpleAnimals();
+        animaList = AnimalFactory.createSimpleAnimals();
 
         ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, animaList);
@@ -62,7 +63,7 @@ public class SimpleLIstView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent will be here
                 Intent intent = new Intent(SimpleLIstView.this, ListViewOfSameKind.class);
-                intent.putExtra("AnimalName", listView.getItemIdAtPosition(position));
+                intent.putExtra("Posion of animal", animaList.get(position));
                 startActivity(intent);
             }
         });

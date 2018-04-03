@@ -8,8 +8,11 @@ import java.util.List;
 public class AnimalFactory {
 
 
+    private static List<Animal> animalList;
+
+
     public static List<Animal> createAnimals() {
-        List<Animal> animalList = new ArrayList<>();
+        animalList = new ArrayList<>();
 
         animalList.add(new Animal("Tiger", "400", "Cat"));
         animalList.add(new Animal("Python", "40", "Snake"));
@@ -25,11 +28,11 @@ public class AnimalFactory {
     public static List<String> createSimpleAnimals() {
 
         List<String> strings = new ArrayList<>();
-        strings.add("Tiger");
-        strings.add("Python");
-        strings.add("Lion");
-        strings.add("Chimpanzee");
-        strings.add("Parrot");
+        strings.add("Cat");
+        strings.add("Snake");
+        strings.add("Monkey");
+        strings.add("Bird");
+        strings.add("Dear");
         return strings;
 
     }
@@ -48,5 +51,6 @@ public class AnimalFactory {
 
         return animalList;
     }
+
 
 }
