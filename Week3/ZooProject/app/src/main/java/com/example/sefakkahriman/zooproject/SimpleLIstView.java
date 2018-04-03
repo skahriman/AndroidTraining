@@ -29,7 +29,7 @@ public class SimpleLIstView extends AppCompatActivity {
 
         bindViews();
         bindSimpleList();
-        showItemOnAnimalList();
+        clickItemOnAnimalList();
 
     }
 
@@ -40,8 +40,7 @@ public class SimpleLIstView extends AppCompatActivity {
 
     public void bindSimpleList() {
 
-        List<String> animaList = new ArrayList<>();
-        animaList = AnimalFactory.createSimpleAnimals();
+        List<String> animaList = AnimalFactory.createSimpleAnimals();
 
         ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, animaList);
@@ -50,7 +49,7 @@ public class SimpleLIstView extends AppCompatActivity {
 
     // Show items when clicked on list elements.
 
-    public void showItemOnAnimalList() {
+    public void clickItemOnAnimalList() {
         List<String> moreAnimals = new ArrayList<>();
         moreAnimals = AnimalFactory.createSimpleAnimals();
         ArrayAdapter<String> listAdapter =

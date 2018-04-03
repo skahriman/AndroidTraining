@@ -47,6 +47,6 @@ public class AnimalFactory {
         animalList.add(new Animal("Anaconda", "60", "Snake"));
 
         return animalList;
-
     }
+
 }
