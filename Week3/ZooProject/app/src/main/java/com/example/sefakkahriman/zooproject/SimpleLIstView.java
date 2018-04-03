@@ -19,7 +19,7 @@ import java.util.List;
 
 public class SimpleLIstView extends AppCompatActivity {
 
-    private ListView lvSimple ;
+   // private ListView lvSimple ;
     private ListView listView;
 
     @Override
@@ -34,7 +34,7 @@ public class SimpleLIstView extends AppCompatActivity {
     }
 
     public void bindViews(){
-        lvSimple = findViewById(R.id.lvSimple);
+        //lvSimple = findViewById(R.id.lvSimple);
         listView = findViewById(R.id.lvSimple);
     }
 
@@ -45,7 +45,7 @@ public class SimpleLIstView extends AppCompatActivity {
 
         ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, animaList);
-        lvSimple.setAdapter(arrayAdapter);
+        listView.setAdapter(arrayAdapter);
     }
 
     // Show items when clicked on list elements.
