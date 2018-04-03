@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.sefakkahriman.listlikeviews.adapter.RecyclerListAdapter;
-import com.example.sefakkahriman.listlikeviews.model.Animal;
 import com.example.sefakkahriman.listlikeviews.data.AnimalFactory;
+import com.example.sefakkahriman.listlikeviews.model.Animal;
 
 import java.util.List;
 
