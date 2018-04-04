@@ -10,6 +10,4 @@ public class SimpleListListener implements AdapterView.OnItemClickListener{
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Toast.makeText(view.getContext(), String.valueOf(i), Toast.LENGTH_SHORT).show();
     }
-
-
 }

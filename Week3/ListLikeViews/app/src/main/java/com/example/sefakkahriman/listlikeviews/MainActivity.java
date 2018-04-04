@@ -23,16 +23,18 @@ public class MainActivity extends AppCompatActivity implements CustomListAdapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         bindViews();
         bindSimpleList();
         bindCustomListView();
 
     }
 
-    private void bindViews() {
-        lvSimple = findViewById(R.id.lvSimple);
-        lvCustom = findViewById(R.id.lvCustom);
+    private void bindCustomListView() {
+        CustomListAdapter customListAdapter =
+                new CustomListAdapter(this,
+                        R.layout.simple_list_item,
+                        AnimalFactory.createAnimals());
+        lvCustom.setAdapter(customListAdapter);
     }
 
     private void bindSimpleList() {
@@ -45,13 +47,11 @@ public class MainActivity extends AppCompatActivity implements CustomListAdapter
         lvSimple.setOnItemClickListener(new SimpleListListener());
     }
 
-    private void bindCustomListView() {
-        CustomListAdapter customListAdapter =
-                new CustomListAdapter(this,
-                        R.layout.simple_list_item,
-                        AnimalFactory.createAnimals());
-        lvCustom.setAdapter(customListAdapter);
+    private void bindViews() {
+        lvSimple = findViewById(R.id.lvSimple);
+        lvCustom = findViewById(R.id.lvCustom);
     }
+
 
     @Override
     public void onItemClick(Animal animal) {
