@@ -50,11 +50,14 @@ public class AnimalFactory {
         animalList.add(new Animal("Moose", "80", "Deer"));
         animalList.add(new Animal("Anaconda", "60", "Snake"));
 
+
         return animalList;
     }
 
     public static List<Animal> getAnilamsOfSameType (String str) {
         createAnimals();
+        getMoreAnimals();
+        getMoreAnimals();
         getMoreAnimals();
 
         for(int i = 0; i < animalList.size(); i ++) {
@@ -63,4 +66,5 @@ public class AnimalFactory {
         }
         return typeList;
     }
+
 }

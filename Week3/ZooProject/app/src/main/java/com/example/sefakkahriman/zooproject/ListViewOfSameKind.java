@@ -16,31 +16,46 @@ import java.util.List;
 public class ListViewOfSameKind extends AppCompatActivity {
 
     private ListView listView;
+    private List<Animal> typeList;
+
     private String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_of_same_kind);
-        bindViews();
 
+        bindViews();
         getIntent().getStringExtra("Type");
         type = getIntent().getStringExtra("Type");
-        Toast.makeText(this, type, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Category " + type, Toast.LENGTH_SHORT).show();
 
-        bindSimpleList();
+        bindSameKindOfList();
     }
 
     public void bindViews(){
         listView = findViewById(R.id.idOfListOfSameKind);
     }
 
-    public void bindSimpleList() {
-        List<Animal> animalList = AnimalFactory.createAnimals();
-        List<Animal> typeList = AnimalFactory.getAnilamsOfSameType(type);
+    public void bindSameKindOfList() {
+        typeList = AnimalFactory.getAnilamsOfSameType(type);
 
         ArrayAdapter<Animal> arrayAdapter =
                 new ArrayAdapter<Animal>(this, android.R.layout.simple_list_item_1, typeList);
         listView.setAdapter(arrayAdapter);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

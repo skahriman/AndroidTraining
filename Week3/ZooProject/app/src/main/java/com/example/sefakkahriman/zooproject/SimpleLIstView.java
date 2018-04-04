@@ -1,6 +1,5 @@
 package com.example.sefakkahriman.zooproject;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,20 +7,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.sefakkahriman.zooproject.data.AnimalFactory;
-import com.example.sefakkahriman.zooproject.listener.SimpleListListener;
-import com.example.sefakkahriman.zooproject.model.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleLIstView extends AppCompatActivity {
 
-   // private ListView lvSimple ;
     private ListView listView;
-    private List<String> animaList;
+    private List<String> kindList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +24,21 @@ public class SimpleLIstView extends AppCompatActivity {
         setContentView(R.layout.activity_simple_list_view);
 
         bindViews();
-        bindSimpleList();
+        bindCategoryList();
         clickItemOnAnimalList();
 
     }
 
     public void bindViews(){
-        //lvSimple = findViewById(R.id.lvSimple);
         listView = findViewById(R.id.lvSimple);
     }
 
-    public void bindSimpleList() {
+    public void bindCategoryList() {
 
-        animaList = AnimalFactory.createSimpleAnimals();
+        kindList = AnimalFactory.createSimpleAnimals();
 
         ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, animaList);
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, kindList);
         listView.setAdapter(arrayAdapter);
     }
 
@@ -63,7 +57,7 @@ public class SimpleLIstView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent will be here
                 Intent intent = new Intent(SimpleLIstView.this, ListViewOfSameKind.class);
-                intent.putExtra("Type", animaList.get(position));
+                intent.putExtra("Type", kindList.get(position));
                 startActivity(intent);
             }
         });

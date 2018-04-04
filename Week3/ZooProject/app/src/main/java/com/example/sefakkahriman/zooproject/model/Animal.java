@@ -38,11 +38,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", weight='" + weight + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return type + " " + name + " " + weight;
     }
 
 }
