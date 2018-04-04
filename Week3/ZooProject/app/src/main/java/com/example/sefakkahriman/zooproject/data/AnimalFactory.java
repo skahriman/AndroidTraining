@@ -16,13 +16,18 @@ public class AnimalFactory {
         typeList = new ArrayList<>();
 
         animalList.add(new Animal("Tiger", "400", "Cat"));
-        animalList.add(new Animal("Python", "40", "Snake"));
-        animalList.add(new Animal("Lion", "450", "Cat"));
-        animalList.add(new Animal("Chimpanzee", "100", "Monkey"));
-        animalList.add(new Animal("Parrot", "10", "Bird"));
         animalList.add(new Animal("Mountain Lion", "300", "Cat"));
-        animalList.add(new Animal("Moose", "80", "Deer"));
+        animalList.add(new Animal("Lion", "450", "Cat"));
+        animalList.add(new Animal("Python", "40", "Snake"));
         animalList.add(new Animal("Anaconda", "60", "Snake"));
+        animalList.add(new Animal("Chimpanzee", "100", "Monkey"));
+        animalList.add(new Animal("Gorilla", "600", "Monkey"));
+        animalList.add(new Animal("Chimpanzee", "100", "Monkey"));
+        animalList.add(new Animal("Baboon", "90", "Monkey"));
+        animalList.add(new Animal("Parrot", "10", "Bird"));
+        animalList.add(new Animal("Eagle", "15", "Bird"));
+        animalList.add(new Animal("Hawk", "10", "Bird"));
+        animalList.add(new Animal("Moose", "80", "Deer"));
         return animalList;
     }
 
@@ -33,7 +38,7 @@ public class AnimalFactory {
         strings.add("Snake");
         strings.add("Monkey");
         strings.add("Bird");
-        strings.add("Dear");
+        strings.add("Deer");
         return strings;
 
     }
@@ -55,10 +60,7 @@ public class AnimalFactory {
     }
 
     public static List<Animal> getAnilamsOfSameType (String str) {
-        createAnimals();
-        getMoreAnimals();
-        getMoreAnimals();
-        getMoreAnimals();
+        AnimalFactory.createAnimals();
 
         for(int i = 0; i < animalList.size(); i ++) {
             if(animalList.get(i).getType().equals(str))
