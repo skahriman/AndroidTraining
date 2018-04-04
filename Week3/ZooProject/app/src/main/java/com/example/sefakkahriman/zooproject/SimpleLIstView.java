@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.sefakkahriman.zooproject.data.AnimalFactory;
 
@@ -56,13 +57,15 @@ public class SimpleLIstView extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent will be here
-                Intent intent = new Intent(SimpleLIstView.this, ListViewOfSameKind.class);
+//                Intent intent = new Intent(SimpleLIstView.this, ListViewOfSameKind.class);
+                Intent intent = new Intent(SimpleLIstView.this, RecyclerActivity.class);
                 intent.putExtra("Type", kindList.get(position));
                 startActivity(intent);
             }
         });
         listView.setAdapter(listAdapter);
     }
+
 }
 
 

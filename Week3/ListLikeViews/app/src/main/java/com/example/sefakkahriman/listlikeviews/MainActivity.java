@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity implements CustomListAdapter
     public void goToRecyclerActivity(View view) {
         Intent intent
                 = new Intent(
-                getApplicationContext(),
-                RecyclerActivity.class);
+                getApplicationContext(), RecyclerActivity.class);
         startActivity(intent);
 
     }
