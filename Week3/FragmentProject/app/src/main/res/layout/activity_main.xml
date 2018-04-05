@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:text="add"
+        android:id="@+id/idAddButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickFragments"/>
+
+    <Button
+        android:text="view"
+        android:id="@+id/idViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickFragments"/>
+
+    <!-- Dynamic fragments-->
+    <!-- Placeholder 1-->
+    <FrameLayout
+    android:id="@+id/flHolder1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <!-- Placeholder 2-->
+    <FrameLayout
+        android:id="@+id/flHolder2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
