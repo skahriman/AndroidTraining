@@ -53,9 +53,12 @@ public class AddFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Car myCar = new Car(brand.getText().toString(), make.getText().toString(),year.getText().toString());
-                MyAdapter.car.add(myCar);
+                String str = brand.getText().toString() + make.getText().toString() + year.getText().toString();
 
+                if(str!="") {
+                    Car myCar = new Car(brand.getText().toString(), make.getText().toString(), year.getText().toString());
+                    MyAdapter.car.add(myCar);
+                }
                 //this notifies when ever data set is changed.
                 MyAdapter.adapter.notifyDataSetChanged();///////////////////////////
             }
@@ -63,8 +66,6 @@ public class AddFragment extends Fragment {
 
         setEnterTransition(new Slide(Gravity.BOTTOM));
         return view;
-
     }
-
 
 }
