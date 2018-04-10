@@ -13,14 +13,16 @@ public class MyStaticReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.d(TAG, "onReceive: ");
-
         switch (intent.getAction()) {
-            case Intent.ACTION_AIRPLANE_MODE_CHANGED:
+            case "myAction":
+                Toast.makeText(context, intent.getStringExtra("data"), Toast.LENGTH_SHORT).show();
+                break;
 
-                boolean status = intent.getBooleanExtra("state", false);
+            case "myIntentAction":
+                String result = intent.getStringExtra("result");
+                Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
+                Log.d("RECEIVER_TAG", "onReceive: "+ result);
 
-                Toast.makeText(context, "Airplane mode " + status, Toast.LENGTH_SHORT).show();
 
                 break;
         }

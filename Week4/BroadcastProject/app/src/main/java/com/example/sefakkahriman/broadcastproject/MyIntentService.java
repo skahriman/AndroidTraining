@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.broadcastreceivers;
+package com.example.sefakkahriman.broadcastproject;
 
 import android.Manifest;
 import android.app.IntentService;

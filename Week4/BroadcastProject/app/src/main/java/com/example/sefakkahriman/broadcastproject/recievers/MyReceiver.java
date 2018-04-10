@@ -22,12 +22,13 @@ public class MyReceiver extends BroadcastReceiver {
                 break;
 
             case Intent.ACTION_POWER_CONNECTED:
+                Log.d("MY_RECEIVER_TAG ", "connected: ");
                 Toast.makeText(context, "Charger connected", Toast.LENGTH_SHORT).show();
 
                 break;
 
             case Intent.ACTION_POWER_DISCONNECTED:
-
+                Log.d("MY_RECEIVER_TAG ", "disconnected: ");
                 Toast.makeText(context, "Charger disconnected", Toast.LENGTH_SHORT).show();
 
                 break;
