@@ -9,18 +9,18 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/idEditText"
-        android:hint="Enter username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:onClick="onClickButton"
-        android:id="@+id/idButton"
+        android:id="@+id/etUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Me!"
-        android:layout_margin="5dp"/>
+        android:hint="Enter GitHub username"
+        />
+    <Button
+        android:text="see profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textSize="30dp"
+        android:onClick="onClickButton"/>
 
 
 
