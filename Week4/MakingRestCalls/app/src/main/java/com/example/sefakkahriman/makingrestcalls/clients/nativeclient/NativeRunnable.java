@@ -1,5 +1,6 @@
 package com.example.sefakkahriman.makingrestcalls.clients.nativeclient;
 
+
 import com.example.sefakkahriman.makingrestcalls.utils.HandlerUtils;
 
 import java.io.IOException;
@@ -9,8 +10,6 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class NativeRunnable implements Runnable {
-
-
 
 
     String BASE_URL;

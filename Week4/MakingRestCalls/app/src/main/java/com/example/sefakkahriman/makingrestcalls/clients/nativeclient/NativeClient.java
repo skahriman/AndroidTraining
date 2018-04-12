@@ -1,6 +1,5 @@
 package com.example.sefakkahriman.makingrestcalls.clients.nativeclient;
 
-
 public class NativeClient{
 
 

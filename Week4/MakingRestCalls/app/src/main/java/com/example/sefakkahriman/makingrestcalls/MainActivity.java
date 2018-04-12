@@ -1,21 +1,41 @@
 package com.example.sefakkahriman.makingrestcalls;
 
+
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.sefakkahriman.makingrestcalls.clients.OkHttpHelper;
+import com.example.sefakkahriman.makingrestcalls.clients.okhttp.OkHttpHelper;
 import com.example.sefakkahriman.makingrestcalls.clients.nativeclient.NativeClient;
+import com.example.sefakkahriman.makingrestcalls.clients.retrofit.RetrofitHelper;
 import com.example.sefakkahriman.makingrestcalls.model.GithubProfile;
+import com.example.sefakkahriman.makingrestcalls.rxjava.RxjavaUtils;
 import com.example.sefakkahriman.makingrestcalls.utils.parser.CustomParser;
 import com.example.sefakkahriman.makingrestcalls.utils.parser.GsonParser;
 import com.example.sefakkahriman.makingrestcalls.utils.HandlerUtils;
 import com.example.sefakkahriman.makingrestcalls.utils.MessageUtils;
 
-public class MainActivity extends AppCompatActivity implements Handler.Callback {
+import org.json.JSONException;
+
+import java.io.IOException;
+
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class MainActivity extends AppCompatActivity implements Handler.Callback, MainObserver.onObserverInteraction{
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     String Base_URL = "https://api.github.com/users/manroopsingh";
     String BASEURL = "http://www.mocky.io/v2/5accc44a3200005e0077650a";
@@ -55,6 +75,43 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
                 okHttpHelper.executeAsync();
 
                 break;
+
+            case R.id.btnRetrofitSync:
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //                            Log.d(TAG, "run: "+
+//                                    RetrofitHelper.getProfileWithMocky().execute().body().getFollowers());;
+                    }
+                }).start();
+                break;
+
+            case R.id.btnRetrofitAsync:
+
+                RetrofitHelper retrofitHelper = new RetrofitHelper(getApplicationContext());
+//                retrofitHelper.getProfileWithGithub("manroopsingh")
+//                        .enqueue(new Callback<GithubProfile>() {
+//                            @Override
+//                            public void onResponse(Call<GithubProfile> call, Response<GithubProfile> response) {
+//                                Log.d(TAG, "onResponse: " + response.body().getFollowers());
+
+//                            }
+//
+//                            @Override
+//                            public void onFailure(Call<GithubProfile> call, Throwable t) {
+//
+//                            }
+//                        });
+
+                retrofitHelper.getProfileObs("manroopsingh")
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .map(RxjavaUtils.getGithubFunction())
+                        .subscribe(new MainObserver(this));
+
+
+                break;
         }
     }
 
@@ -73,6 +130,12 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
 
         tvResults.setText(githubProfile.getName());
         return false;
+
+    }
+
+    @Override
+    public void onResult(GithubProfile githubProfile) {
+        tvResults.setText(githubProfile.getName());
 
     }
 }

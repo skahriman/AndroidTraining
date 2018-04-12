@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.makingrestcalls.clients.nativeclient;
+package com.example.sefakkahriman.makingrestcalls.clients.okhttp;
 
 import com.example.sefakkahriman.makingrestcalls.utils.HandlerUtils;
 
