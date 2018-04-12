@@ -27,13 +27,7 @@ public class Main {
         integers.add(4);
         integers.add(5);
 
-
-
         Observable<Integer> observable = Observable.fromIterable(integers);
-
-
-
-
 
         Observable<Integer> integerObservable = Observable.just(1, 2, 3, 4, 5, 6);
 
