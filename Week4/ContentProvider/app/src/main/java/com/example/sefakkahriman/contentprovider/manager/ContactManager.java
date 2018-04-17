@@ -49,8 +49,6 @@ public class ContactManager {
 
             if (has_phone > 0) {
 
-
-
                 List<String> numbers = new ArrayList<>();
 
                 Uri phoneUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
