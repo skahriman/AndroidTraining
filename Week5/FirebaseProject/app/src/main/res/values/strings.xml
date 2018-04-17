@@ -1,12 +1,3 @@
 <resources>
     <string name="app_name">FirebaseProject</string>
-    <string name="facebook_app_id">198994900879053</string>
-    <string name="fb_login_protocol_scheme">fb198994900879053</string>
-
-
-    <string name="signed_out">signed out</string>
-    <string name="facebook_status_fmt">Facebook Status fmt</string>
-    <string name="firebase_status_fmt">Firebase Status fmt</string>
-
-
 </resources>
