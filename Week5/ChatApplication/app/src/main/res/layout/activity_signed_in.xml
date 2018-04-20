@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignedInActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="You have successfully logged in or registered"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/logout"
@@ -21,21 +32,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center_vertical|center_horizontal|center"
-        android:text="You have successfully logged in or registered"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="175dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/logout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:onClick="onSeeUsersClicked"
+        android:text="See Users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

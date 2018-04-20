@@ -1,5 +1,6 @@
 package com.sefakkahriman.chatapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,5 +19,9 @@ public class SignedInActivity extends AppCompatActivity {
     public void onLogout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(this, RegisterActivity.class));
+    }
+
+    public void onSeeUsersClicked(View view) {
+        startActivity(new Intent(getApplicationContext(), AllUsers.class));
     }
 }

@@ -1,4 +1,4 @@
-package com.sefakkahriman.chatapplication;
+package com.sefakkahriman.chatapplication.model;
 
 public class User {
 
