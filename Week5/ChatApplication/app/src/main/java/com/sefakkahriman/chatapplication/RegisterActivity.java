@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -22,6 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase mFirebaseDatabaseInstance;
+    private DatabaseReference mFirebaseDatabase;
 
     private String userId;
     private String email;
@@ -31,26 +36,22 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        inputEmail = (EditText) findViewById(R.id.email);
+        inputPassword = (EditText) findViewById(R.id.password);
+        inputUsername = (EditText) findViewById(R.id.username);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
         //Get Firebase instances
         mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabaseInstance = FirebaseDatabase.getInstance();
 
         // if already logged in go sign in screen
         if (mAuth.getCurrentUser() != null) {
             startActivity(new Intent(this, SignedInActivity.class));
             finish();
         }
-
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        inputUsername = (EditText) findViewById(R.id.username);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        progressBar.setVisibility(View.GONE);
-    }
 
     public void onRegisterClicked(View view) {
         String emailInput = inputEmail.getText().toString().trim();
@@ -78,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         progressBar.setVisibility(View.VISIBLE);
+
         //create user
         mAuth.createUserWithEmailAndPassword(emailInput, password)
                 .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -93,6 +95,18 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();
                             Log.e("MyTag", task.getException().toString());
                         } else {
+
+                            // get reference to 'users' node
+                            mFirebaseDatabase = mFirebaseDatabaseInstance.getReference("users");
+
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            // add username, email to database
+                            userId = user.getUid();
+                            email = user.getEmail();
+
+                            User myUser = new User(username, email);
+
+                            mFirebaseDatabase.child(userId).setValue(myUser);
 
                             startActivity(new Intent(RegisterActivity.this, SignedInActivity.class));
                             finish();
