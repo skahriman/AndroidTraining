@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "409377398511",
+    "firebase_url": "https://chasemobileappdemo.firebaseio.com",
+    "project_id": "chasemobileappdemo",
+    "storage_bucket": "chasemobileappdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409377398511:android:a27ea1d72c1d434c",
+        "android_client_info": {
+          "package_name": "com.example.sefakkahriman.chasemobileappdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409377398511-9t8ji5volv6i2tgk1f22oc5t2tptespg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sefakkahriman.chasemobileappdemo",
+            "certificate_hash": "53d1a24658f7c04cf800ede23ab3360b38eb9a12"
+          }
+        },
+        {
+          "client_id": "409377398511-rv3o21ku3l358vqege762caphuel6jnc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "409377398511-rv3o21ku3l358vqege762caphuel6jnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrx3yLhJyTLF8qS5lohUI9bgW7zWeXwjg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409377398511-rv3o21ku3l358vqege762caphuel6jnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

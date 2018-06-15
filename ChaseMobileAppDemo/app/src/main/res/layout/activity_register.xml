@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
+
 
     <!-- A CardView that contains a TextView -->
 
@@ -19,7 +20,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="320dp"
             android:padding="20dp">
 
             <EditText
@@ -43,16 +44,32 @@
                 app:layout_constraintTop_toBottomOf="@+id/etUserIdSignUp" />
 
             <Button
-                android:id="@+id/logOn"
+                android:id="@+id/btnSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:onClick="onLoginClicked"
-                android:text="Log On"
+                android:layout_marginBottom="76dp"
+                android:layout_marginTop="8dp"
+                android:onClick="onSignUpClicked"
+                android:text="Sign up"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etPasswordSignUP" />
+                app:layout_constraintTop_toBottomOf="@+id/edPasswordSignUP"
+                app:layout_constraintVertical_bias="0.619" />
+
+            <Button
+                android:id="@+id/btnAlreadySigndeUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="8dp"
+                android:onClick="onAlreadySignedUpClicked"
+                android:text="Already Signde Up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
+
 
         </android.support.constraint.ConstraintLayout>
 
