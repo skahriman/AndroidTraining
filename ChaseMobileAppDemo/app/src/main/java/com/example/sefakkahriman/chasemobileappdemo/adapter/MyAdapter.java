@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.cardview.adapter;
+package com.example.sefakkahriman.chasemobileappdemo.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.sefakkahriman.chasemobileappdemo.R;
+import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItem;
+
 import java.util.List;
 
-import com.example.sefakkahriman.cardview.R;
-import com.example.sefakkahriman.cardview.model.ListItem;
-
-    public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private Context context;
     private List<ListItem> listitems;
@@ -27,7 +27,7 @@ import com.example.sefakkahriman.cardview.model.ListItem;
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_row, parent, false);
+                .inflate(R.layout.cardview, parent, false);
         return new ViewHolder(view);
     }
 
@@ -35,8 +35,10 @@ import com.example.sefakkahriman.cardview.model.ListItem;
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
 
         ListItem item = listitems.get(position);
-        holder.name.setText(item.getName());
-        holder.description.setText(item.getDescription());
+        holder.title.setText(item.getTitle());
+        holder.balance.setText(item.getBalance());
+        holder.availableBalance.setText(item.getAvailableBalance());
+
     }
 
     @Override
@@ -47,15 +49,15 @@ import com.example.sefakkahriman.cardview.model.ListItem;
     // holds all items
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView name;
-        public TextView description;
+        public TextView title;
+        public TextView balance;
+        public TextView availableBalance;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            this.name = (TextView) itemView.findViewById(R.id.name);
-            this.description = (TextView) itemView.findViewById(R.id.description);
+            this.title = itemView.findViewById(R.id.title);
+            this.balance = itemView.findViewById(R.id.balance);
+            this.availableBalance = itemView.findViewById(R.id.availableBalance);
         }
-
-
     }
 }

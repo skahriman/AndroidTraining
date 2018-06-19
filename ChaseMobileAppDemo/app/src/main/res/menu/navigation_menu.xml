@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/accounts"
+        android:title="Accounts" />
+
+    <item android:id="@+id/transferMoney"
+        android:title="Transfer money" >
+        <menu>
+            <item android:id="@+id/scheduleTransfer"
+                android:title="Schedule Transfer"/>
+            <item android:id="@+id/viewActivity_1"
+                android:title="View Activity"/>
+            <item android:id="@+id/manageExternalAccounts"
+                android:title="Manage External Accounts"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/payBills"
+        android:title="Pay Bills" >
+        <menu>
+            <item android:id="@+id/schedulePayment"
+                android:title="Schedule Payment"/>
+            <item android:id="@+id/viewActivity_2"
+                android:title="View Activity"/>
+            <item android:id="@+id/managePayees"
+                android:title="Manage Payees"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/quickPayWithZelle"
+        android:title="Quick Pay With Zelle" >
+        <menu>
+            <item android:id="@+id/toDoList"
+                android:title="To Do List"/>
+            <item android:id="@+id/sendMoney"
+                android:title="Send Money"/>
+            <item android:id="@+id/requestAndSplitMoney"
+                android:title="Request &amp; Split Money"/>
+            <item android:id="@+id/viewActivity_3"
+                android:title="View Activity"/>
+            <item android:id="@+id/manageRecipients"
+                android:title="Manage Recipients"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/depositChecks"
+        android:title="Deposit Checks" />
+
+    <item android:id="@+id/wireTransfer"
+        android:title="Wire Transfer" >
+        <menu>
+            <item android:id="@+id/scheduleWireTransfer"
+                android:title="Schedule Wire Transfer"/>
+            <item android:id="@+id/viewActivity_4"
+                android:title="View Activity"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/openBrokerageAccount"
+        android:title="Open a Brokerage Account" />
+    <item android:id="@+id/atmAndBranch"
+        android:title="ATM &amp; Branch" />
+
+
+</menu>
