@@ -1,10 +1,10 @@
 package com.example.sefakkahriman.chasemobileappdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.sefakkahriman.chasemobileappdemo.model.ListOfTransactions;
-import com.example.sefakkahriman.chasemobileappdemo.model.Transaction;
 import com.example.sefakkahriman.chasemobileappdemo.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +28,8 @@ public class SignedInActivity extends AppCompatActivity {
 
         writeNewUser(id, "John", "john@email.com", "Atlanta, GA");
         writeNewTransaction();
+
+        startActivity(new Intent(this, HomePageActivity.class));
 
     }
 
