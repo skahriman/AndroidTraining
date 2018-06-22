@@ -6,13 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.sefakkahriman.recyclerviewdemo.adapter.RecyclerViewAdapter;
-import com.example.sefakkahriman.recyclerviewdemo.model.PersonList;
+import com.example.sefakkahriman.recyclerviewdemo.model.Person;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<String> personList = new ArrayList<>();
+    private ArrayList<Person> personList = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
 
@@ -21,13 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getList();
+        createList();
         initRecyclerView();
-    }
-
-    private void getList(){
-
-        personList = PersonList.createAndGetList();
     }
 
     private void initRecyclerView(){
@@ -35,5 +30,22 @@ public class MainActivity extends AppCompatActivity {
         adapter = new RecyclerViewAdapter(personList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void createList(){
+
+        personList.add(new Person("Ali", "Kahriman"));
+        personList.add(new Person("Guner", "Kahriman"));
+        personList.add(new Person("Ali", "Kahriman"));
+        personList.add(new Person("Ahmet", "Kahriman"));
+        personList.add(new Person("Sefak", "Kahriman"));
+        personList.add(new Person("Nuray", "Kahriman"));
+        personList.add(new Person("Oguzhan", "Kahriman"));
+        personList.add(new Person("Efe", "Kahriman"));
+        personList.add(new Person("Jake", "Oliv"));
+        personList.add(new Person("Michael", "Jackson"));
+        personList.add(new Person("Lionel", "Messi"));
+        personList.add(new Person("Selim", "Kahriman"));
+
     }
 }

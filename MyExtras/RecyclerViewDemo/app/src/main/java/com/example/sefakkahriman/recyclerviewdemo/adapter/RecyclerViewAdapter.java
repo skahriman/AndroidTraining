@@ -10,15 +10,16 @@ import android.widget.TextView;
 
 
 import com.example.sefakkahriman.recyclerviewdemo.R;
+import com.example.sefakkahriman.recyclerviewdemo.model.Person;
 
 import java.util.ArrayList;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
-    private ArrayList<String> personLIst;
+    private ArrayList<Person> personLIst;
 
-    public RecyclerViewAdapter(ArrayList<String> personLIst) {
+    public RecyclerViewAdapter(ArrayList<Person> personLIst) {
         this.personLIst = personLIst;
     }
 
@@ -35,7 +36,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
-        holder.personName.setText(personLIst.get(position));
+        holder.personName.setText(personLIst.get(position).getName());
+        holder.personLastName.setText(personLIst.get(position).getLastName());
     }
 
     @Override
@@ -47,11 +49,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView personName;
+        TextView personLastName;
         RelativeLayout parentLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
             personName = itemView.findViewById(R.id.personNameID);
+            personLastName = itemView.findViewById(R.id.personLastNameID);
             parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }

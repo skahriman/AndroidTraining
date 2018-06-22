@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItem;
 import com.example.sefakkahriman.chasemobileappdemo.model.ListOfTransactions;
 import com.example.sefakkahriman.chasemobileappdemo.model.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -27,6 +29,7 @@ import java.util.List;
 
 public class SignedInActivity extends AppCompatActivity {
 
+    private static final String TAG = "myTag";
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private String id;
@@ -47,7 +50,7 @@ public class SignedInActivity extends AppCompatActivity {
         id = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        writeNewUser(id, "John", "john@email.com", "Atlanta, GA");
+        writeNewUser(id, "John", "john@email.com", "504-434-9997");
         writeNewTransaction();
 
        ///////////////

@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sefakkahriman.chasemobileappdemo.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -29,8 +31,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         //get Firebase instance
         mAuth = FirebaseAuth.getInstance();
-
-
 
     }
 
