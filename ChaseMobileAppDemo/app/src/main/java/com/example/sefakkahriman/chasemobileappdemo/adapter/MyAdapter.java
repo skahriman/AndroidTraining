@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.availableBalance.setText(item.getAvailableBalance());
 
         //This part is handling click on RecyclerView items
-        holder.linearLayout.git (new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 context.startActivity(new Intent(context, AccountDetailActivity.class));

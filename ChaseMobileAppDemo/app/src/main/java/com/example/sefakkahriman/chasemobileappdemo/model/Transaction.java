@@ -1,18 +1,18 @@
 package com.example.sefakkahriman.chasemobileappdemo.model;
 
-import java.util.Date;
-
 public class Transaction {
 
     String place;
     double amount;
     String date;
+    double balance;
 
 
-    public Transaction(String place, double amount, String date) {
+    public Transaction(String place, double amount, String date, double balance) {
         this.place = place;
         this.amount = amount;
         this.date = date;
+        this.balance = balance;
     }
 
     public String getPlace() {
@@ -27,7 +27,7 @@ public class Transaction {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -39,13 +39,12 @@ public class Transaction {
         this.date = date;
     }
 
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "place='" + place + '\'' +
-                ", amount=" + amount +
-                ", date='" + date + '\'' +
-                '}';
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
 
