@@ -1,6 +1,5 @@
 package com.example.sefakkahriman.chasemobileappdemo;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -9,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -19,7 +17,6 @@ import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItem;
 import com.example.sefakkahriman.chasemobileappdemo.model.ListOfTransactions;
 import com.example.sefakkahriman.chasemobileappdemo.model.User;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -54,18 +51,12 @@ public class SignedInActivity extends AppCompatActivity {
         writeNewTransaction();
 
        ///////////////
+        setMyAdapter();
 
-        recyclerView = findViewById(R.id.recyclerViewID);
-        recyclerView.hasFixedSize();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        setMyDrawerLayout();
+    }
 
-        listItems = new ArrayList<>();
-        ListItem item = new ListItem("CHASE CHECKING(...3795) ", " $...", "Available balance");
-        listItems.add(item);
-
-        adapter = new MyAdapter(this, listItems);
-        recyclerView.setAdapter(adapter);
-
+    private void setMyDrawerLayout() {
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
@@ -84,9 +75,19 @@ public class SignedInActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
 
+    public void setMyAdapter() {
+        recyclerView = findViewById(R.id.recyclerViewIDForHomePage);
+        recyclerView.hasFixedSize();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        listItems = new ArrayList<>();
+        ListItem item = new ListItem("CHASE CHECKING(...3795) ", " $...", "Available balance");
+        listItems.add(item);
 
+        adapter = new MyAdapter(this, listItems);
+        recyclerView.setAdapter(adapter);
     }
 
     public void writeNewUser(String userId, String name, String email, String address) {
