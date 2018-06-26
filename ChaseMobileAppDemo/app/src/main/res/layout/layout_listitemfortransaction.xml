@@ -66,12 +66,13 @@
 
                 <TextView
                     android:id="@+id/tvAmount"
-                    android:layout_width="167dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="92dp"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text="amount"
+                    android:gravity="right"
                     app:layout_constraintBottom_toBottomOf="@+id/tvBalance"
                     app:layout_constraintStart_toEndOf="@+id/tvBalance"
                     app:layout_constraintTop_toTopOf="@+id/tvBalance" />

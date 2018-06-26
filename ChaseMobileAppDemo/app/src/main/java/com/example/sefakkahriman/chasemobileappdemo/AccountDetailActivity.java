@@ -50,19 +50,14 @@ public class AccountDetailActivity extends AppCompatActivity {
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Transaction item1 = new Transaction("Walmart", 10, "01/02/2018", 1000);
-        Transaction item2 = new Transaction("Windixy", 30, "05/02/2018", 500);
-
-        listItems.add(item1);
-        listItems.add(item2);
-
-        //Read data from database
-
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 showData(dataSnapshot);
-                Log.d(TAG, "onDataChange: size of list is: " + listItems.size());
+                //this part is very important to update it
+                adapter.notifyDataSetChanged();
+                //this part is very important to update it
+
             }
 
             @Override
@@ -75,6 +70,7 @@ public class AccountDetailActivity extends AppCompatActivity {
 
         adapter = new RecyclerViewAdapterForTransactions(this, listItems);
         recyclerView.setAdapter(adapter);
+
     }
 
     private void showData(DataSnapshot dataSnapshot) {
