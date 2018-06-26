@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.sefakkahriman.chasemobileappdemo.R;
-import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItemForTransaction;
+import com.example.sefakkahriman.chasemobileappdemo.model.Transaction;
 
 import java.util.List;
 
@@ -18,11 +18,11 @@ public class RecyclerViewAdapterForTransactions extends
         RecyclerView.Adapter<RecyclerViewAdapterForTransactions.ViewHolder> {
 
     private Context context;
-    private List<ListItemForTransaction> listitems;
+    private List<Transaction> listItems;
 
-    public RecyclerViewAdapterForTransactions(Context context, List<ListItemForTransaction> listitems) {
+    public RecyclerViewAdapterForTransactions(Context context, List<Transaction> listItems) {
         this.context = context;
-        this.listitems = listitems;
+        this.listItems = listItems;
     }
 
     @NonNull
@@ -36,16 +36,16 @@ public class RecyclerViewAdapterForTransactions extends
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        final ListItemForTransaction item = listitems.get(position);
+        final Transaction item = listItems.get(position);
         holder.place.setText(item.getPlace());
-        holder.amount.setText(item.getAmount());
+        holder.amount.setText(Double.toString(item.getAmount()));
         holder.date.setText(item.getDate());
-        holder.balance.setText(item.getBalance());
+        holder.balance.setText(Double.toString(item.getBalance()));
     }
 
     @Override
     public int getItemCount() {
-        return listitems.size();
+        return listItems.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

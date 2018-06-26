@@ -1,12 +1,14 @@
 package com.example.sefakkahriman.chasemobileappdemo.adapter_model;
 
-public class ListItem {
+public class ListItemMap {
 
     private String title;
     private String balance;
     private String availableBalance;
 
-    public ListItem(String title, String balance, String availableBalance) {
+    public ListItemMap() {}
+
+    public ListItemMap(String title, String balance, String availableBalance) {
         this.title = title;
         this.balance = balance;
         this.availableBalance = availableBalance;

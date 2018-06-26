@@ -9,18 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.sefakkahriman.chasemobileappdemo.AccountDetailActivity;
 import com.example.sefakkahriman.chasemobileappdemo.R;
-import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItem;
+import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItemMap;
 
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private Context context;
-    private List<ListItem> listitems;
+    private List<ListItemMap> listitems;
 
     public MyAdapter(Context context, List listitems) {
         this.context = context;
@@ -38,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
 
-        final ListItem item = listitems.get(position);
+        final ListItemMap item = listitems.get(position);
         holder.title.setText(item.getTitle());
         holder.balance.setText(item.getBalance());
         holder.availableBalance.setText(item.getAvailableBalance());
@@ -50,7 +49,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 context.startActivity(new Intent(context, AccountDetailActivity.class));
             }
         });
-
     }
 
     @Override

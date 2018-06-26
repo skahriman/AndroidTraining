@@ -7,6 +7,9 @@ public class Transaction {
     String date;
     double balance;
 
+    public Transaction(){
+        // Default constructor required for calls to DataSnapshot.getValue(Transaction.class)
+    }
 
     public Transaction(String place, double amount, String date, double balance) {
         this.place = place;
