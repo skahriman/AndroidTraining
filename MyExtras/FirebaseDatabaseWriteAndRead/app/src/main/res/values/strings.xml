@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FirebaseDatabaseWriteAndRead</string>
+
+    <array name="genres">
+
+        <item>Rock</item>
+        <item>Pop</item>
+        <item>Jaz</item>
+        <item>Country</item>
+
+    </array>
+</resources>
