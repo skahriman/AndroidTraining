@@ -1,5 +1,6 @@
 package com.example.sefakkahriman.chasemobileappdemo;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -110,8 +111,10 @@ public class SignedInActivity extends AppCompatActivity {
             return true;
         }
 
-        else
+        else {
             Toast.makeText(this, "Clicked on " + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, ProfileSettingsActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
     }

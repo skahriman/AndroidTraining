@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileSettingsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <Button
+            android:id="@+id/mySettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My settings"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alerts &amp; Messages"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"/>
+        <Button
+            android:id="@+id/viewAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View alerts"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:id="@+id/manageAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manage alerts"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:id="@+id/secureMessageCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Secure message center"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help &amp; Support"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"/>
+        <Button
+            android:id="@+id/contactUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact us"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:id="@+id/faqs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FAQs"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Legal"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"/>
+        <Button
+            android:id="@+id/privacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:id="@+id/disclosures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disclosures"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+        <Button
+            android:id="@+id/legalAgreements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Legal agreements"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:onClick="onClickButton"/>
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
