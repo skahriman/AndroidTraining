@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.sefakkahriman.chasemobileappdemo.adapter.MyAdapter;
-import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItemMap;
+import com.example.sefakkahriman.chasemobileappdemo.model.ListItemMap;
 import com.example.sefakkahriman.chasemobileappdemo.model.ListOfTransactions;
 import com.example.sefakkahriman.chasemobileappdemo.model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +26,8 @@ import java.util.List;
 
 
 public class SignedInActivity extends AppCompatActivity {
+
+    private double balance;
 
     private static final String TAG = "myTag";
     private FirebaseAuth mAuth;
@@ -79,12 +81,14 @@ public class SignedInActivity extends AppCompatActivity {
     }
 
     public void setMyAdapter() {
+
+
         recyclerView = findViewById(R.id.recyclerViewIDForHomePage);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listItems = new ArrayList<>();
-        ListItemMap item = new ListItemMap("CHASE CHECKING(...3795) ", " $...", "Available balance");
+        ListItemMap item = new ListItemMap("CHASE CHECKING(...3795) ", " $" + this.balance, "Available balance");
         listItems.add(item);
 
         adapter = new MyAdapter(this, listItems);
@@ -103,6 +107,8 @@ public class SignedInActivity extends AppCompatActivity {
             double amount = listOfTransactions.getList().get(i).getAmount();
             mDatabase.child("transactions").child(id).child("trans_" + i).setValue(listOfTransactions.getList().get(i));
         }
+        int size = listOfTransactions.getList().size();
+        this.balance = listOfTransactions.getList().get(size - 1).getBalance();
     }
 
     @Override

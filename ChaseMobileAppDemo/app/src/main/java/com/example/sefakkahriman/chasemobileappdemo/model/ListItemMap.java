@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.chasemobileappdemo.adapter_model;
+package com.example.sefakkahriman.chasemobileappdemo.model;
 
 public class ListItemMap {
 

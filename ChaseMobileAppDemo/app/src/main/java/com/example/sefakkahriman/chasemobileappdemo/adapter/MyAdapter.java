@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.sefakkahriman.chasemobileappdemo.AccountDetailActivity;
 import com.example.sefakkahriman.chasemobileappdemo.R;
-import com.example.sefakkahriman.chasemobileappdemo.adapter_model.ListItemMap;
+import com.example.sefakkahriman.chasemobileappdemo.model.ListItemMap;
 
 import java.util.List;
 
