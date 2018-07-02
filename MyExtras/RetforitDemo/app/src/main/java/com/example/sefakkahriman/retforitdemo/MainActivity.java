@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView) findViewById(R.id.pagination_list);
+        listView = findViewById(R.id.pagination_list);
 
 
         Retrofit.Builder builder = new Retrofit.Builder()

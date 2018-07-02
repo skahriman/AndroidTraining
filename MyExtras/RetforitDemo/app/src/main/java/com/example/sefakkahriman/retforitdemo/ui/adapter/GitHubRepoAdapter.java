@@ -12,8 +12,6 @@ import com.example.sefakkahriman.retforitdemo.api.model.GitHubRepo;
 
 import java.util.List;
 
-
-
 public class GitHubRepoAdapter extends ArrayAdapter<GitHubRepo> {
 
     private Context context;
