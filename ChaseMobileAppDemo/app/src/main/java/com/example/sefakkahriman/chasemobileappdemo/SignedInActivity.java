@@ -53,7 +53,7 @@ public class SignedInActivity extends AppCompatActivity {
         writeNewUser(id, "John", "john@email.com", "504-434-9997");
         writeNewTransaction();
 
-       ///////////////
+        ///////////////
         setMyAdapter();
 
         setMyDrawerLayout();
