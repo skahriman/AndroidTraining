@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.example.sefakkahriman.storage.model.Person;
 import com.example.sefakkahriman.storage.model.data.LocalDataSource;
+import com.example.sefakkahriman.storage.model.data.room.Book;
+import com.example.sefakkahriman.storage.model.data.room.RoomHelper;
 
 import java.util.List;
 
@@ -23,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText etPersonAge;
     private EditText etPersonGender;
     private LocalDataSource localDataSource;
+    private EditText etBookISBN;
+    private EditText etBookAuthor;
+    private EditText etBookName;
+    private RoomHelper roomHelper;
 
 
     @Override
@@ -38,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
         etPersonGender = findViewById(R.id.etPersonGender);
 
         localDataSource = new LocalDataSource(this);
+
+        //for room database
+        etBookISBN = findViewById(R.id.etBookISBN);
+        etBookAuthor = findViewById(R.id.etBookAuthor);
+        etBookName = findViewById(R.id.etBookName);
+
+        //using sqlite
+        localDataSource = new LocalDataSource(this);
+
+        //using room ORM
+        roomHelper = new RoomHelper(this);
 
     }
 
@@ -93,5 +110,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, personList.toString(), Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    public void onSaveBook(View view) {
+        Book book = new Book(etBookISBN.getText().toString(),
+                etBookName.getText().toString(),
+                etBookAuthor.getText().toString());
+        roomHelper.saveBook(book);
+    }
+
+    public void onGetAllBooks(View view) {
+        roomHelper.getBooks();
     }
 }

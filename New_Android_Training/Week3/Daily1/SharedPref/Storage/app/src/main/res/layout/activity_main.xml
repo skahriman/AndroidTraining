@@ -1,70 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etMain"
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnSaveData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save data"
-        android:onClick="handleSharedPreferences"/>
+        <EditText
+            android:id="@+id/etMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnGetData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Get data"
-        android:onClick="handleSharedPreferences"/>
+        <Button
+            android:id="@+id/btnSaveData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save data"
+            android:onClick="handleSharedPreferences"/>
 
-    <TextView
-        android:id="@+id/tvMain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnGetData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get data"
+            android:onClick="handleSharedPreferences"/>
 
-    <!-- SQL database-->
-    <EditText
-        android:text="John Doe"
-        android:id="@+id/etPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:text="23"
-        android:id="@+id/etPersonAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <!-- SQL database-->
+        <EditText
+            android:text="John Doe"
+            android:id="@+id/etPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:text="Male"
-        android:id="@+id/etPersonGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:text="23"
+            android:id="@+id/etPersonAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnSavePerson"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="handlingDatabase"
-        android:text="Save person"/>
+        <EditText
+            android:text="Male"
+            android:id="@+id/etPersonGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnGelAllPersons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="handlingDatabase"
-        android:text="Get All persons"/>
+        <Button
+            android:id="@+id/btnSavePerson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="handlingDatabase"
+            android:text="Save person"/>
 
+        <Button
+            android:id="@+id/btnGelAllPersons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="handlingDatabase"
+            android:text="Get All persons"/>
 
+        <!-- UI to tes Room database-->
+        <EditText
+            android:hint="ISBN"
+            android:id="@+id/etBookISBN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:hint="Book Name"
+            android:id="@+id/etBookName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:hint="Book Author"
+            android:id="@+id/etBookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Save Book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSaveBook"/>
+        <Button
+            android:text="Get All Book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onGetAllBooks"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
+
