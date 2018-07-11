@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Categories" />
-        <activity android:name=".AnimalsForCategory"></activity>
+        <activity android:name=".AnimalsForCategory" />
+        <activity android:name=".AnimalDetail"></activity>
     </application>
 
 </manifest>

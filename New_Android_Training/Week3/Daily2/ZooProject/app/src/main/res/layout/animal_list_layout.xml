@@ -3,7 +3,8 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout">
 
     <TextView
         android:id="@+id/tvName"
@@ -19,5 +20,7 @@
         android:id="@+id/tvSound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

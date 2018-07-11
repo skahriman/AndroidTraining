@@ -4,10 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.example.sefakkahriman.zooproject.adapter.RVAnimalAdapter;
-import com.example.sefakkahriman.zooproject.data.Book;
+import com.example.sefakkahriman.zooproject.data.Animal;
 import com.example.sefakkahriman.zooproject.data.DataCreator;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class AnimalsForCategory extends AppCompatActivity {
 
     private static final String TAG = "myTag";
 
-    private List<Book> animalList;
+    private List<Animal> animalList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +26,12 @@ public class AnimalsForCategory extends AppCompatActivity {
 
         String animalType = (String) extras.get("name");
 //        this.animalList = DataCreator.getAnimals(animalType);
-        this.animalList = DataCreator.getBookList();
+        this.animalList = DataCreator.getAnimals(animalType);
 
         RecyclerView recyclerView = findViewById(R.id.rvAnimals);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 
-        RVAnimalAdapter adapter = new RVAnimalAdapter(DataCreator.getAnimals(animalType));
+        RVAnimalAdapter adapter = new RVAnimalAdapter(DataCreator.getAnimals(animalType), this);
 //        RVBookAdapter adapter = new RVBookAdapter(DataCreator.getBookList());
 
         recyclerView.setLayoutManager(layoutManager);
