@@ -48,13 +48,16 @@ public class RVAnimalAdapter extends RecyclerView.Adapter<RVAnimalAdapter.ViewHo
         Animal animal = animalList.get(i);
 
         viewHolder.tvName.setText(animal.getName());
-//        viewHolder.tvWeight.setText(String.valueOf(animal.getWeight()));
-//        viewHolder.tvSound.setText(animal.getSound());
+        viewHolder.tvWeight.setText(String.valueOf(animal.getWeight()));
+        viewHolder.tvSound.setText(animal.getSound());
         viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "You clicked " + animalList.get(i).getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, AnimalDetail.class);
+                intent.putExtra("name", animalList.get(i).getName());
+                intent.putExtra("weight", animalList.get(i).getWeight());
+                intent.putExtra("sound", animalList.get(i).getSound());
                 context.startActivity(intent);
             }
         });
