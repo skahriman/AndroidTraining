@@ -31,17 +31,17 @@ public static final String STRING_TAG = RedFragment.class.getSimpleName();
         return inflater.inflate(R.layout.fragment_red, container, false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Button button = getActivity().findViewById(R.id.btnSendToRed);
-        EditText editText = getActivity().findViewById(R.id.etRed);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-    }
+//    @Override
+//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+//        Button button = getActivity().findViewById(R.id.btnSendToRed);
+//        EditText editText = getActivity().findViewById(R.id.etRed);
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+//    }
 }

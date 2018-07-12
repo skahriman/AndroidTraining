@@ -29,9 +29,12 @@
                 android:id="@+id/cvSound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <TextView
-                android:text="This will be image"
-                android:layout_width="match_parent"
+
+            <ImageView
+                android:src="@drawable/dog"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
 
