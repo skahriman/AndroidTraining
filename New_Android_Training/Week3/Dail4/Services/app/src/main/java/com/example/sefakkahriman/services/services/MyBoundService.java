@@ -22,7 +22,7 @@ public class MyBoundService extends Service {
         return "This is  the data from server";
     }
 
-//    Binder classs to communicate with clients
+//    Binder class to communicate with clients
     public class MyBinder extends Binder {
 
         public MyBoundService getService() {
