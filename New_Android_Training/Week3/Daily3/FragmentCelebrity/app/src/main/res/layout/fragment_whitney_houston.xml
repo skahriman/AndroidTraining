@@ -6,9 +6,28 @@
     tools:context=".fragments.WhitneyHoustonFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="139dp"
+            android:layout_height="83dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/whitney_houston" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="96dp"
+            android:text="Born on August 9, 1963 in Newark, New Jersey, Whitney Houston almost seemed destined from birth to become a singer. Her mother Cissy Houston, cousin Dionne Warwick and godmother Aretha Franklin were all legendary figures in American gospel, soul and pop music.Jul 5, 2018"/>
+    </RelativeLayout>
 
 </FrameLayout>

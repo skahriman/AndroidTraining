@@ -13,7 +13,12 @@ import com.example.sefakkahriman.fragmentcelebrity.fragments.WhitneyHoustonFragm
 
 public class MainActivity extends AppCompatActivity implements ListFragment.FragmentListener {
 
-    private int input =  3;
+    private int input;
+    private ListFragment celebrityFragment;
+    private AtaturkFragment ataturk;
+    private MuhammadAliFragment ali;
+    private WhitneyHoustonFragment whitneyHouston;
+    private MichaelJacksonFragment michaelJackson;
 
 
     @Override
@@ -21,19 +26,23 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Frag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListFragment celebrityFragment = new ListFragment();
-        AtaturkFragment ataturk = new AtaturkFragment();
-        MuhammadAliFragment ali = new MuhammadAliFragment();
-        WhitneyHoustonFragment whitneyHouston = new WhitneyHoustonFragment();
-        MichaelJacksonFragment michaelJackson = new MichaelJacksonFragment();
+        celebrityFragment = new ListFragment();
+
+        ataturk = new AtaturkFragment();
+        ali = new MuhammadAliFragment();
+        whitneyHouston = new WhitneyHoustonFragment();
+        michaelJackson = new MichaelJacksonFragment();
 
         //Add the Fragment
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, celebrityFragment)
                 .commit();
+    }
 
+    @Override
+    public void getInteger(int i) {
 
-        switch (input) {
+        switch (i) {
 
             case 0:
                 getSupportFragmentManager().beginTransaction()
@@ -44,27 +53,23 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Frag
             case 1:
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.detailContainer, ali)
+                        .addToBackStack(MuhammadAliFragment.class.getSimpleName())
                         .commit();
                 break;
 
             case 2:
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.detailContainer, ataturk)
+                        .addToBackStack(WhitneyHoustonFragment.class.getSimpleName())
                         .commit();
                 break;
 
             case 3:
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.detailContainer, ataturk)
+                        .add(R.id.detailContainer, whitneyHouston)
+                        .addToBackStack(AtaturkFragment.class.getSimpleName())
                         .commit();
                 break;
         }
-
-
-    }
-
-    @Override
-    public int getInteger(int i) {
-        return i;
     }
 }

@@ -6,9 +6,28 @@
     tools:context=".fragments.MichaelJacksonFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="139dp"
+            android:layout_height="83dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/michael_jackson" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="96dp"
+            android:text="Michael Joseph Jackson was born in Gary, Indiana on August 29, 1958, and entertained audiences nearly his entire life. His father, Joe Jackson, had been a guitarist, but was forced to give up his musical ambitions following his marriage to Katherine Jackson (née Katherine Esther Scruse)." />
+    </RelativeLayout>
 
 </FrameLayout>

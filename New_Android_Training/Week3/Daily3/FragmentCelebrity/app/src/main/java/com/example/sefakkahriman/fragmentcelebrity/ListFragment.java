@@ -22,6 +22,9 @@ public class ListFragment extends Fragment {
 
     private ListView listView;
     private FragmentListener listener;
+    private int position;
+    Context context;
+    private String[] listItems;
 
     public ListFragment() {
         // Required empty public constructor
@@ -33,7 +36,7 @@ public class ListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
-        String[] listItems = {"Michael Jackson", "Muhammad Ali", "Ataturk", "Whitney Houston"};
+        listItems = new String[]{"Michael Jackson", "Muhammad Ali", "Ataturk", "Whitney Houston"};
 
         listView = view.findViewById(R.id.listView);
 
@@ -54,7 +57,6 @@ public class ListFragment extends Fragment {
                 Toast.makeText(getActivity(), "Clicked on element " + i, Toast.LENGTH_SHORT).show();
 
 //              This part is to communicate with Activity
-                int input = i;
                 listener.getInteger(i);
             }
         });
@@ -79,6 +81,6 @@ public class ListFragment extends Fragment {
     }
 
     public interface FragmentListener {
-        int getInteger(int i);
+        void getInteger(int i);
     }
 }
