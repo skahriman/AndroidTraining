@@ -15,11 +15,10 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Frag
 
     private int input;
     private ListFragment celebrityFragment;
-    private AtaturkFragment ataturk;
-    private MuhammadAliFragment ali;
-    private WhitneyHoustonFragment whitneyHouston;
     private MichaelJacksonFragment michaelJackson;
-
+    private MuhammadAliFragment ali;
+    private AtaturkFragment ataturk;
+    private WhitneyHoustonFragment whitneyHouston;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

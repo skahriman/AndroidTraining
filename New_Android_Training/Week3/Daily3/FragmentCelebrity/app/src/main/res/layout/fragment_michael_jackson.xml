@@ -27,6 +27,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="96dp"
+            android:background="@android:color/holo_blue_light"
             android:text="Michael Joseph Jackson was born in Gary, Indiana on August 29, 1958, and entertained audiences nearly his entire life. His father, Joe Jackson, had been a guitarist, but was forced to give up his musical ambitions following his marriage to Katherine Jackson (née Katherine Esther Scruse)." />
     </RelativeLayout>
 

@@ -29,6 +29,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="96dp"
+            android:background="@android:color/holo_orange_light"
             android:text="Mustafa Kemal Atatürk (1881-1938) was an army officer who founded an independent Republic of Turkey out of the ruins of the Ottoman Empire. He then served as Turkey's first president from 1923 until his death in 1938, implementing reforms that rapidly secularized and westernized the country." />
     </RelativeLayout>
 

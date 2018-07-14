@@ -27,6 +27,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="96dp"
+            android:background="@android:color/holo_red_dark"
             android:text="Born on August 9, 1963 in Newark, New Jersey, Whitney Houston almost seemed destined from birth to become a singer. Her mother Cissy Houston, cousin Dionne Warwick and godmother Aretha Franklin were all legendary figures in American gospel, soul and pop music.Jul 5, 2018"/>
     </RelativeLayout>
 
