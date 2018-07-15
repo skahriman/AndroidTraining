@@ -1,0 +1,5 @@
+Week 3 Daily 4(SERVICES)
+
+1. Create a foreground service with notification. Clicking on the notification 	  	 will stop the foreground music. The notification bar should be able to start 	   and stop the music.
+2. Create an IntentService to create a list of random objects (The objects should 	 have atleast 4 fields including an image). Populate the recyclerView in the same	activity which starts the intent service. Pass the data using a broadcast 		   receiver.
+3. Use the AlarmManager(Btn1) and JobScheduler(Btn2) to send a notification after 	 30 secs on clicking each list item. The notification should have the object 	   information that was clicked on.
