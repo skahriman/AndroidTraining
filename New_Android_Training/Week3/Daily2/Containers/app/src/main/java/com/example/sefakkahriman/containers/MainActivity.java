@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         populateBookListView();
 
+        populateRecyclerView();
+    }
+
+    private void populateRecyclerView() {
         RecyclerView rvBooks = findViewById(R.id.rvBooks);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         RVBookAdapter adapter = new RVBookAdapter(DataCreator.getBookList());

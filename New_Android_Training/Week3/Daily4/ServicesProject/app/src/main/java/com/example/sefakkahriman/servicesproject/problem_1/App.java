@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.servicesproject;
+package com.example.sefakkahriman.servicesproject.problem_1;
 
 import android.app.Application;
 import android.app.NotificationChannel;

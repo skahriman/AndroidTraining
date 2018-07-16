@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.servicesproject;
+package com.example.sefakkahriman.servicesproject.problem_1;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -9,7 +9,10 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
-import static com.example.sefakkahriman.servicesproject.App.CHANNEL_ID;
+import com.example.sefakkahriman.servicesproject.MainActivity;
+import com.example.sefakkahriman.servicesproject.R;
+
+import static com.example.sefakkahriman.servicesproject.problem_1.App.CHANNEL_ID;
 
 public class ExampleService extends Service {
 
@@ -24,6 +27,7 @@ public class ExampleService extends Service {
         String input = intent.getStringExtra("inputExtra");
 
         Intent activityIntent = new Intent(this, MainActivity.class);
+
         PendingIntent contentIntent = PendingIntent.getActivity(this,
                 0, activityIntent, 0);
 
