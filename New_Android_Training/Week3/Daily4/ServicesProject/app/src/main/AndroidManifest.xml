@@ -3,6 +3,7 @@
     package="com.example.sefakkahriman.servicesproject">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,10 +18,12 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".ForegroundService"
+        <service android:name=".ExampleService" />
+
+        <receiver
+            android:name=".NotificationReceiver"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true"></receiver>
     </application>
 
 </manifest>

@@ -1,46 +1,47 @@
 package com.example.sefakkahriman.servicesproject;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Intent;
-import android.os.Bundle;
+import android.media.MediaPlayer;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RemoteViews;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
+public class MainActivity extends AppCompatActivity {
+
+    private MediaPlayer mySong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button startButton = (Button) findViewById(R.id.button1);
-        Button stopButton = (Button) findViewById(R.id.button2);
 
-        startButton.setOnClickListener(this);
-        stopButton.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button1:
-                Intent startIntent = new Intent(MainActivity.this, ForegroundService.class);
-                startIntent.setAction(Constants.ACTION.STARTFOREGROUND_ACTION);
-                startService(startIntent);
-                break;
-            case R.id.button2:
-                Intent stopIntent = new Intent(MainActivity.this, ForegroundService.class);
-                stopIntent.setAction(Constants.ACTION.STOPFOREGROUND_ACTION);
-                startService(stopIntent);
-                break;
-
-            default:
-                break;
-        }
+        mySong = MediaPlayer.create(this, R.raw.mozart);
 
     }
+
+    public void startService(View view) {
+
+        Intent intent = new Intent(this, ExampleService.class);
+        startService(intent);
+
+    }
+
+    public void stopService(View view) {
+
+        Intent intent = new Intent(this, ExampleService.class);
+        stopService(intent);
+    }
+
+//    public void onClickStartMusic(View view) {
+//        mySong.start();
+//    }
+//
+//    public void onClickStopMusic(View view) {
+//        mySong.stop();
+//    }
 }
