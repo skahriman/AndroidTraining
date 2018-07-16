@@ -5,16 +5,21 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.example.sefakkahriman.servicesproject.MainActivity;
 import com.example.sefakkahriman.servicesproject.R;
+import com.example.sefakkahriman.servicesproject.problem_2.MyIntentService;
 
 import static com.example.sefakkahriman.servicesproject.problem_1.App.CHANNEL_ID;
 
 public class ExampleService extends Service {
+    MediaPlayer mediaPlayer;
+    public static final String TAG = ExampleService.class.getSimpleName() + "_TAG";
 
     @Override
     public void onCreate() {
@@ -24,39 +29,48 @@ public class ExampleService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        String input = intent.getStringExtra("inputExtra");
+        Log.d(TAG, "onStartCommand: " + intent.getAction());
 
-        Intent activityIntent = new Intent(this, MainActivity.class);
+        switch (intent.getAction()) {
+            case "PLAY":
+                play();
+                break;
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this,
-                0, activityIntent, 0);
+            case "STOP":
+                mediaPlayer.stop();
+//                onDestroy();
+                break;
+        }
 
-        Intent broadcastIntent = new Intent(this, NotificationReceiver.class);
+        return super.onStartCommand(intent, flags, startId);
+    }
 
-        PendingIntent playIntent = PendingIntent.getBroadcast(this,
-                0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+    private void play() {
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.mozart);
+        mediaPlayer.start();
 
-        PendingIntent pauseIntent = PendingIntent.getBroadcast(this,
-                0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent stopIntent = new Intent(getApplicationContext(), ExampleService.class);
+        stopIntent.setAction("STOP");
+
+        PendingIntent pendingStop = PendingIntent.getService(getApplicationContext(), 0, stopIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
 
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+        Notification notification = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
                 .setContentTitle("Example Service")
-                .setContentText(input)
-                .setSmallIcon(R.drawable.ic_android)
-                .addAction(R.mipmap.ic_launcher, "Play", playIntent)
-                .addAction(R.drawable.ic_action_pause, "Pause", pauseIntent)
+//                .setContentText(input)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setSmallIcon(R.drawable.ic_music)
+                .addAction(R.mipmap.ic_launcher, "STOP", pendingStop)
                 .setColor(Color.BLUE)
-                .setContentIntent(contentIntent)
                 .build();
 
         startForeground(1, notification);
-
-        return START_NOT_STICKY;
     }
 
     @Override
     public void onDestroy() {
+        mediaPlayer.stop();
+        stopSelf();
         super.onDestroy();
     }
 

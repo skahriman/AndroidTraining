@@ -24,14 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void startService(View view) {
 
-        Intent intent = new Intent(this, ExampleService.class);
+        Intent intent = new Intent(getApplicationContext(), ExampleService.class);
+        intent.setAction("PLAY");
         startService(intent);
 
     }
 
     public void stopService(View view) {
 
-        Intent intent = new Intent(this, ExampleService.class);
+        Intent intent = new Intent(getApplicationContext(), ExampleService.class);
         stopService(intent);
     }
 

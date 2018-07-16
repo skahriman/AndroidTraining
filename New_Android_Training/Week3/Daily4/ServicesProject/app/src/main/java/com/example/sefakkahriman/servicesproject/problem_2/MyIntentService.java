@@ -2,23 +2,8 @@ package com.example.sefakkahriman.servicesproject.problem_2;
 
 import android.Manifest;
 import android.app.IntentService;
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.provider.ContactsContract;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-
-import com.example.sefakkahriman.servicesproject.R;
-import com.example.sefakkahriman.servicesproject.problem_1.NotificationReceiver;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.example.sefakkahriman.servicesproject.problem_1.App.CHANNEL_ID;
 
 public class MyIntentService extends IntentService {
 
