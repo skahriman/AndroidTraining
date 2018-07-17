@@ -11,15 +11,15 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.example.sefakkahriman.servicesproject.MainActivity;
 import com.example.sefakkahriman.servicesproject.R;
-import com.example.sefakkahriman.servicesproject.problem_2.MyIntentService;
+
+import java.net.IDN;
 
 import static com.example.sefakkahriman.servicesproject.problem_1.App.CHANNEL_ID;
 
-public class ExampleService extends Service {
+public class MyService extends Service {
     MediaPlayer mediaPlayer;
-    public static final String TAG = ExampleService.class.getSimpleName() + "_TAG";
+    public static final String TAG = MyService.class.getSimpleName() + "_TAG";
 
     @Override
     public void onCreate() {
@@ -30,14 +30,29 @@ public class ExampleService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Log.d(TAG, "onStartCommand: " + intent.getAction());
+        String action = intent.getAction();
 
-        switch (intent.getAction()) {
+        switch (action) {
             case "PLAY":
                 play();
+                Log.d(TAG, "onStartCommand: onPLAY " + intent.getAction());
+
                 break;
 
             case "STOP":
                 mediaPlayer.stop();
+                Log.d(TAG, "onStartCommand: onSTOP " + intent.getAction());
+//                onDestroy();
+                break;
+
+            case "PAUSE":
+                if (mediaPlayer.isPlaying()){
+                    mediaPlayer.pause();
+                } else {
+                    mediaPlayer.start();
+                }
+
+                Log.d(TAG, "onStartCommand: onPAUSE " + intent.getAction());
 //                onDestroy();
                 break;
         }
@@ -49,23 +64,29 @@ public class ExampleService extends Service {
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.mozart);
         mediaPlayer.start();
 
-        Intent stopIntent = new Intent(getApplicationContext(), ExampleService.class);
+        Intent stopIntent = new Intent(getApplicationContext(), MyService.class);
         stopIntent.setAction("STOP");
-
         PendingIntent pendingStop = PendingIntent.getService(getApplicationContext(), 0, stopIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
 
+        Intent pauseIntent = new Intent(getApplicationContext(), MyService.class);
+        pauseIntent.setAction("PAUSE");
+        PendingIntent pendingPause = PendingIntent.getService(getApplicationContext(), 0, pauseIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+
         Notification notification = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
-                .setContentTitle("Example Service")
+                .setContentTitle("MUSIC PLAYER")
 //                .setContentText(input)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setSmallIcon(R.drawable.ic_music)
-                .addAction(R.mipmap.ic_launcher, "STOP", pendingStop)
+                .addAction(R.mipmap.ic_launcher, "PAUSE/START", pendingPause)
+
                 .setColor(Color.BLUE)
                 .build();
 
         startForeground(1, notification);
     }
+
 
     @Override
     public void onDestroy() {

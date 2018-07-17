@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".problem_1.ExampleService" />
+        <service android:name=".problem_1.MyService" />
 
         <receiver
             android:name=".problem_1.NotificationReceiver"

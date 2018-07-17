@@ -1,17 +1,12 @@
 package com.example.sefakkahriman.servicesproject;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.sefakkahriman.servicesproject.problem_1.ExampleService;
-import com.example.sefakkahriman.servicesproject.problem_2.DataCreator;
+import com.example.sefakkahriman.servicesproject.problem_1.MyService;
 import com.example.sefakkahriman.servicesproject.problem_2.MyIntentService;
-import com.example.sefakkahriman.servicesproject.problem_2.RecyclerViewAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startService(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), ExampleService.class);
+        Intent intent = new Intent(getApplicationContext(), MyService.class);
         intent.setAction("PLAY");
         startService(intent);
 
@@ -32,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void stopService(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), ExampleService.class);
+        Intent intent = new Intent(getApplicationContext(), MyService.class);
         stopService(intent);
     }
 
