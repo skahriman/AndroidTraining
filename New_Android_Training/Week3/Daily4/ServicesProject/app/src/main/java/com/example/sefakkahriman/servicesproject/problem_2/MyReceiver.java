@@ -44,7 +44,7 @@ public class MyReceiver extends BroadcastReceiver {
 
     private void populateRecycleView(List<Person> personList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(personList);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(personList, context);
         rvPerson.setLayoutManager(layoutManager);
         rvPerson.setAdapter(adapter);
     }
