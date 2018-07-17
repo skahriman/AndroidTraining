@@ -30,18 +30,20 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
         intentFilter.addAction(Constants.Action.MY_ACTION);
 
-//        registerReceiver(myReceiver, intentFilter);
-        //restrict the reveiver for local only
-        LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver, intentFilter);
+        registerReceiver(myReceiver, intentFilter);
 
-
+//        this part is for Local Broadcasting
+//        restrict the receiver for local only
+//        LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver, intentFilter);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-//        unregisterReceiver(myReceiver);
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(myReceiver);
+        unregisterReceiver(myReceiver);
+
+//        This part is for Local Broadcasting
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(myReceiver);
     }
 
     public void sendBroadcast(View view) {
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendBroadcastOut(View view) {
-
         String data = editText.getText().toString();
         Intent intent = new Intent(Constants.Action.ACTION_OUTSIDE);
         intent.putExtra(Constants.Key.MY_KEY, data);

@@ -20,18 +20,13 @@
 
         <service android:name=".problem_1.MyService" />
 
-        <receiver
-            android:name=".problem_1.NotificationReceiver"
-            android:enabled="true"
-            android:exported="true" />
-
         <service
             android:name=".problem_2.MyIntentService"
             android:exported="false">
         </service>
 
         <receiver
-            android:name=".problem_2.DataReceiver"
+            android:name=".problem_2.MyReceiver"
             android:enabled="true"
             android:exported="true">
         </receiver>

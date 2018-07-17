@@ -6,16 +6,23 @@ import java.util.List;
 public class DataCreator {
 
 
-    private static List<Person> list;
+    private static ArrayList<Person> list;
 
-    public static List<Person> getPersons() {
-        list = new ArrayList<>();
-
-        list.add(new Person("Michael ", "Jackson", "Singer"));
-        list.add(new Person("Muhammed ", "Ali", "Boxer"));
-        list.add(new Person("Johny ", "Cash", "Country Singer"));
-        list.add(new Person("Lionel ", "Messi", "Soccer Player"));
-
+    public static ArrayList<Person> getPersons() {
+//
+//        int michaelJackson_ID = ;
+//        int ali_ID;
+//        int cash_ID;
+//        int messi_ID;
+//
+//
+//        list = new ArrayList<>();
+//
+//        list.add(new Person("Michael ", "Jackson", "Singer", 1));
+//        list.add(new Person("Muhammad ", "Ali", "Boxer", 2));
+//        list.add(new Person("Johny ", "Cash", "Country Singer", 3));
+//        list.add(new Person("Lionel ", "Messi", "Soccer Player", 4));
+//
         return list;
     }
 }

@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sefakkahriman.servicesproject.R;
@@ -32,6 +33,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Person person = personList.get(i);
 
+        viewHolder.image.setBackgroundResource(person.getPictureID());
+
         viewHolder.name.setText(person.name);
         viewHolder.title.setText(person.title);
         viewHolder.type.setText(person.type);
@@ -48,6 +51,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private final TextView name;
         private final TextView title;
         private final TextView type;
+        private final ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,6 +59,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             name = itemView.findViewById(R.id.name);
             title = itemView.findViewById(R.id.title);
             type = itemView.findViewById(R.id.type);
+            image = itemView.findViewById(R.id.image);
+
         }
     }
 }

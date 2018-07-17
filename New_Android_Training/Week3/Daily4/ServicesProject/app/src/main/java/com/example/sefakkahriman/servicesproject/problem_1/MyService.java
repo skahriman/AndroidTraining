@@ -63,11 +63,11 @@ public class MyService extends Service {
     private void play() {
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.mozart);
         mediaPlayer.start();
-
-        Intent stopIntent = new Intent(getApplicationContext(), MyService.class);
-        stopIntent.setAction("STOP");
-        PendingIntent pendingStop = PendingIntent.getService(getApplicationContext(), 0, stopIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-
+//
+//        Intent startIntent = new Intent(getApplicationContext(), MyService.class);
+//        startIntent.setAction("START");
+//        PendingIntent pendingStart = PendingIntent.getService(getApplicationContext(), 0, startIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+//
 
         Intent pauseIntent = new Intent(getApplicationContext(), MyService.class);
         pauseIntent.setAction("PAUSE");
