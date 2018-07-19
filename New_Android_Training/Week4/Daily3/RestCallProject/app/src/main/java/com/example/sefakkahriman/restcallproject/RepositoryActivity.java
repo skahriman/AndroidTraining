@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.sefakkahriman.restcallproject.adapter.RVAdapterForProfile;
+import com.example.sefakkahriman.restcallproject.adapter.RepoAdapter;
 import com.example.sefakkahriman.restcallproject.model.GitHubRepo;
 import com.example.sefakkahriman.restcallproject.service.GitHubClient;
 
@@ -22,8 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RepositoryActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    RVAdapterForProfile adapter;
-    List<GitHubRepo> list;
+    RepoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +48,7 @@ public class RepositoryActivity extends AppCompatActivity {
 
                 List<GitHubRepo> repos = response.body();
 
-                adapter = new RVAdapterForProfile(repos);
+                adapter = new RepoAdapter(repos);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
@@ -59,20 +58,6 @@ public class RepositoryActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void onButtonClick(View view) {
-
-        switch (view.getId()) {
-
-            case R.id.btnProfile:
-                startActivity(new Intent(getApplicationContext(), GithubProfileActivity.class));
-                break;
-
-            case R.id.btnRepo:
-                startActivity(new Intent(getApplicationContext(), RepositoryActivity.class));
-                break;
-        }
     }
 
 }

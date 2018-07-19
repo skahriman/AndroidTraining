@@ -12,11 +12,11 @@ import com.example.sefakkahriman.restcallproject.model.GitHubRepo;
 
 import java.util.List;
 
-public class RVAdapterForProfile extends RecyclerView.Adapter<RVAdapterForProfile.ViewHolder> {
+public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.ViewHolder> {
 
     List<GitHubRepo> repoList;
 
-    public RVAdapterForProfile(List<GitHubRepo> repoList) {
+    public RepoAdapter(List<GitHubRepo> repoList) {
         this.repoList = repoList;
     }
 
@@ -33,7 +33,6 @@ public class RVAdapterForProfile extends RecyclerView.Adapter<RVAdapterForProfil
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.language.setText(repoList.get(position).getLanguage());
-        holder.branches_url.setText(repoList.get(position).getBranchesUrl());
         holder.name.setText(repoList.get(position).getName());
         holder.updatedAt.setText(repoList.get(position).getUpdatedAt());
         holder.node_id.setText(repoList.get(position).getNodeId());
@@ -49,7 +48,6 @@ public class RVAdapterForProfile extends RecyclerView.Adapter<RVAdapterForProfil
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView language;
-        private TextView branches_url;
         private TextView name;
         private TextView updatedAt;
         private TextView node_id;
@@ -58,7 +56,6 @@ public class RVAdapterForProfile extends RecyclerView.Adapter<RVAdapterForProfil
             super(itemView);
 
             language = itemView.findViewById(R.id.language);
-            branches_url= itemView.findViewById(R.id.branches_url);
             name = itemView.findViewById(R.id.name);
             updatedAt = itemView.findViewById(R.id.updatedAt);
             node_id = itemView.findViewById(R.id.node_id);
