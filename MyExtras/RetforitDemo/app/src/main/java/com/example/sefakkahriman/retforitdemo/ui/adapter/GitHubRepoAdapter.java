@@ -34,7 +34,7 @@ public class GitHubRepoAdapter extends ArrayAdapter<GitHubRepo> {
             row = inflater.inflate(R.layout.list_item_pagination, parent, false);
         }
 
-        TextView textView = (TextView) row.findViewById(R.id.list_item_pagination_text);
+        TextView textView = row.findViewById(R.id.list_item_pagination_text);
 
         GitHubRepo item = values.get(position);
         String message = item.getName();

@@ -31,11 +31,10 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.pagination_list);
 
 
-        Retrofit.Builder builder = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
-                .addConverterFactory(GsonConverterFactory.create());
-
-        Retrofit retrofit = builder.build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
         GitHubClient client = retrofit.create(GitHubClient.class);
         Call<List<GitHubRepo>> call = client.reposForUser("skahriman");
