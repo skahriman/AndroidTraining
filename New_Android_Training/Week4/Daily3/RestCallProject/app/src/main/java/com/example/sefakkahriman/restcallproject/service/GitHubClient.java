@@ -14,7 +14,11 @@ public interface GitHubClient {
 //    @GET("/users/skahriman/repos")
 //    List<GitHubRepo> reposForUser(String user);
 
-    //    this is dynameic
+//    this is dynamic
     @GET("/users/{user}/repos")
     Call<List<GitHubRepo>> reposForUser(@Path("user") String user);
+
+    @GET("/users/{user}")
+    Call<List<GitHubRepo>> getGithubProfile(@Path("user") String user);
+
 }
