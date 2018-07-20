@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.acronymstest.adapter;
+package com.example.sefakkahriman.acronymstest.data;
 
 import java.util.List;
 import com.google.gson.annotations.SerializedName;

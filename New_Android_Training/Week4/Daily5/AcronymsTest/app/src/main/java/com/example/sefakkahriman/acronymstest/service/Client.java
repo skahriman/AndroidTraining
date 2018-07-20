@@ -1,6 +1,6 @@
 package com.example.sefakkahriman.acronymstest.service;
 
-import com.example.sefakkahriman.acronymstest.adapter.Response;
+import com.example.sefakkahriman.acronymstest.data.Response;
 
 import java.util.List;
 

@@ -1,18 +1,14 @@
-package com.example.sefakkahriman.acronymstest.adapter;
+package com.example.sefakkahriman.acronymstest.data;
 
-import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class LfsItem{
+public class VarsItem{
 
 	@SerializedName("freq")
 	private int freq;
 
 	@SerializedName("lf")
 	private String lf;
-
-	@SerializedName("vars")
-	private List<VarsItem> vars;
 
 	@SerializedName("since")
 	private int since;
@@ -33,14 +29,6 @@ public class LfsItem{
 		return lf;
 	}
 
-	public void setVars(List<VarsItem> vars){
-		this.vars = vars;
-	}
-
-	public List<VarsItem> getVars(){
-		return vars;
-	}
-
 	public void setSince(int since){
 		this.since = since;
 	}
@@ -52,10 +40,9 @@ public class LfsItem{
 	@Override
  	public String toString(){
 		return 
-			"LfsItem{" + 
+			"VarsItem{" + 
 			"freq = '" + freq + '\'' + 
 			",lf = '" + lf + '\'' + 
-			",vars = '" + vars + '\'' + 
 			",since = '" + since + '\'' + 
 			"}";
 		}
