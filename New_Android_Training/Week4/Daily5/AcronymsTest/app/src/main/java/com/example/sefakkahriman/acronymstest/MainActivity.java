@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Response>>() {
             @Override
             public void onResponse(Call<List<Response>> call, retrofit2.Response<List<Response>> response) {
-                List<Response> list = response.body();
                 Log.d(TAG, "onResponse: "  + response.body().toString());
             }
 
