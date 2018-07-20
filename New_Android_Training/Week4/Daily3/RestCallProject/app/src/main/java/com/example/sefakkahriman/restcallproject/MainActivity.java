@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.btnProfile:
-                startActivity(new Intent(getApplicationContext(), GithubProfileActivity.class));
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                 break;
 
             case R.id.btnRepo:

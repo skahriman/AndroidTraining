@@ -1,6 +1,7 @@
 package com.example.sefakkahriman.restcallproject.service;
 
 import com.example.sefakkahriman.restcallproject.model.GitHubRepo;
+import com.example.sefakkahriman.restcallproject.model.Owner;
 
 import java.util.List;
 
@@ -19,6 +20,6 @@ public interface GitHubClient {
     Call<List<GitHubRepo>> reposForUser(@Path("user") String user);
 
     @GET("/users/{user}")
-    Call<List<GitHubRepo>> getGithubProfile(@Path("user") String user);
+    Call<List<Owner>> getGithubProfile(@Path("user") String user);
 
 }

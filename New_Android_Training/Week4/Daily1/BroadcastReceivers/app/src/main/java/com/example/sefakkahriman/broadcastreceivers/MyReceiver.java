@@ -3,14 +3,17 @@ package com.example.sefakkahriman.broadcastreceivers;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
+
+import static android.content.ContentValues.TAG;
 
 public class MyReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-
+        Log.d(TAG, "onReceive: runs on: " + Thread.currentThread().getName());
         switch (intent.getAction()) {
 
             case Intent.ACTION_AIRPLANE_MODE_CHANGED:

@@ -3,6 +3,7 @@ package com.example.sefakkahriman.mvpdagger.view.github;
 public class GithubPresenter implements GithubContract.Presenter {
 
     GithubContract.View view;
+
     @Override
     public void validateName(String name) {
 

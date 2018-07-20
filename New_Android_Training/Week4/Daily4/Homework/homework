@@ -1,0 +1,9 @@
+ Senior   Engineer   Technical   Exercise   -   Android
+Build   an   application   that   displays   recipe   search   results.   The   application   will   let   the   user   input   a   search term   and   retrieve   a   list   of   recipes.   Display   the   recipe   results   in   a   scrollable   grid   of   images.   Clicking   on   an image   will   go   to   a   new   screen   that   shows:   the   recipe   image,   recipe   name,   ingredients   list,   source,   and source   link.   The   user   can   click   on   the   source   link   to   leave   the   app   and   navigate   to   the   source   webpage   or select   back   to   return   to   their   search   results.
+Guidelines
+1. Use   the   Edamam   Recipe   Search   API   to   retrieve   recipes:    https://developer.edamam.com/
+2. Adhere   to   all   professional   best   practices   for   Android   development   and   application   design.
+3. Take   advantage   of   any   third   party   libraries   you   need   to   complete   the   exercise.
+4. Create   a   repo   on   GitHub   and   share   the   link   with   us   (either   public   and   send   back   a   link,   or   private and   share   with    mm-krispena) .
+5. This   project   is   meant   to   take   approximately   3-8   hours,   but   take   as   much   time   as   you   need   to complete   it   fully.      Please   let   us   know   when   you   expect   to   be   able   to   deliver   your   implementation.
+6. Use   the   below   screens   for   your   reference:

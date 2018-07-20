@@ -43,8 +43,6 @@ public class GithubActivity extends AppCompatActivity implements GithubContract.
         tvMain.setText(validName);
     }
 
-
-
     @Override
     public void showError(String error) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();

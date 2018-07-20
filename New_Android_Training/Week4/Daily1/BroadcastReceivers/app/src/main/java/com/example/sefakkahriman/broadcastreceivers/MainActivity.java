@@ -57,6 +57,6 @@ public class MainActivity extends AppCompatActivity {
         String data = editText.getText().toString();
         Intent intent = new Intent(Constants.Action.ACTION_OUTSIDE);
         intent.putExtra(Constants.Key.MY_KEY, data);
-        sendBroadcast(intent);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 }
