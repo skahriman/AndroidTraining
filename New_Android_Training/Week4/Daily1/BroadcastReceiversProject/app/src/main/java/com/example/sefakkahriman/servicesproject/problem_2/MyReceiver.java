@@ -34,9 +34,37 @@ public class MyReceiver extends BroadcastReceiver {
             case "myAction":
 
                 personList = intent.getParcelableArrayListExtra("name");
-                String size = Integer.toString(personList.size());
-//                Toast.makeText(context, "size ===> " + size, Toast.LENGTH_SHORT).show();
                 populateRecycleView(personList);
+
+                break;
+
+            case Intent.ACTION_AIRPLANE_MODE_CHANGED:
+                boolean state1 = intent.getBooleanExtra("state", false);
+                Toast.makeText(context, String.valueOf(state1), Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case Intent.ACTION_BATTERY_OKAY:
+                boolean state2 = intent.getBooleanExtra("state", false);
+                Toast.makeText(context, String.valueOf(state2), Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case Intent.ACTION_BATTERY_LOW:
+                boolean state3 = intent.getBooleanExtra("state", false);
+                Toast.makeText(context, String.valueOf(state3), Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case Intent.ACTION_HEADSET_PLUG:
+                boolean state4 = intent.getBooleanExtra("state", false);
+                Toast.makeText(context, String.valueOf(state4), Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case Intent.ACTION_USER_UNLOCKED:
+                boolean state5 = intent.getBooleanExtra("state", false);
+                Toast.makeText(context, String.valueOf(state5), Toast.LENGTH_SHORT).show();
 
                 break;
         }

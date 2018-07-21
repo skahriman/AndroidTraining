@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         intentFilter = new IntentFilter();
         intentFilter.addAction("myAction");
 
+        // This part if for problem_1: sending system broadcast
+        intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        intentFilter.addAction(Intent.ACTION_BATTERY_OKAY);
+        intentFilter.addAction(Intent.ACTION_BATTERY_LOW);
+        intentFilter.addAction(Intent.ACTION_HEADSET_PLUG);
+        intentFilter.addAction(Intent.ACTION_USER_UNLOCKED);
+
         registerReceiver(myReceiver, intentFilter);
 
     }
@@ -46,4 +53,5 @@ public class MainActivity extends AppCompatActivity {
 
         startService(new Intent(getApplicationContext(), MyIntentService.class));
     }
+
 }
