@@ -32,7 +32,13 @@ public class OwnerAdapter extends RecyclerView.Adapter<OwnerAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.login.setText(list.get(position).getLogin());
+        holder.followersUrl.setText("Followers URL: " + list.get(position).getFollowersUrl());
+        holder.id.setText("ID: " + Integer.toString(list.get(position).getId()));
+        holder.avatarUrl.setText("Avatars URL: " + list.get(position).getUrl());
+        holder.followersUrl.setText("Followers URL: " + list.get(position).getFollowersUrl());
+        holder.reposUrl.setText("Followers URL: " + list.get(position).getReposUrl());
+
+
     }
 
     @Override
@@ -42,12 +48,23 @@ public class OwnerAdapter extends RecyclerView.Adapter<OwnerAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView login;
+        TextView followersUrl;
+        TextView avatarUrl;
+        TextView gravatarId;
+        TextView reposUrl;
+
+        TextView id;
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            login = itemView.findViewById(R.id.login);
+            followersUrl = itemView.findViewById(R.id.followersUrl);
+            avatarUrl = itemView.findViewById(R.id.avatarUrl);
+            gravatarId = itemView.findViewById(R.id.gravatarId);
+            id = itemView.findViewById(R.id.id);
+            reposUrl = itemView.findViewById(R.id.reposUrl);
         }
     }
 }

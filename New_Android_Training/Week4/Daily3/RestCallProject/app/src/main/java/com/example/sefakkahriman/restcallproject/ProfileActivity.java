@@ -7,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.example.sefakkahriman.restcallproject.adapter.OwnerAdapter;
-import com.example.sefakkahriman.restcallproject.adapter.RepoAdapter;
-import com.example.sefakkahriman.restcallproject.model.GitHubRepo;
 import com.example.sefakkahriman.restcallproject.model.Owner;
 import com.example.sefakkahriman.restcallproject.service.GitHubClient;
 
@@ -39,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
                 .build();
 
         GitHubClient client = retrofit.create(GitHubClient.class);
-        Call<List<Owner>> call = client.getGithubProfile("skahriman");
+        Call<List<Owner>> call = client.getOwner("skahriman");
 
         call.enqueue(new Callback<List<Owner>>() {
             @Override

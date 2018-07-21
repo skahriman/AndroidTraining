@@ -11,15 +11,12 @@ import retrofit2.http.Path;
 
 public interface GitHubClient {
 
-//    this is static
-//    @GET("/users/skahriman/repos")
-//    List<GitHubRepo> reposForUser(String user);
-
 //    this is dynamic
     @GET("/users/{user}/repos")
     Call<List<GitHubRepo>> reposForUser(@Path("user") String user);
 
-    @GET("/users/{user}")
-    Call<List<Owner>> getGithubProfile(@Path("user") String user);
+    @GET("/users/{user}/repos")
+    Call<List<Owner>> getOwner(@Path("user") String user);
+
 
 }
