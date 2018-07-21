@@ -22,4 +22,11 @@
         android:text="Go to Profile"
         android:onClick="onButtonClick"/>
 
+    <Button
+        android:id="@+id/btnGoToRxJava"
+        android:text="Go to RxJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"/>
+
 </LinearLayout>
