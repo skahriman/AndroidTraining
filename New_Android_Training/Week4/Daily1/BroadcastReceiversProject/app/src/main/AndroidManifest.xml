@@ -19,17 +19,18 @@
         </activity>
 
         <service android:name=".problem_1.MyService" />
-
         <service
             android:name=".problem_2.MyIntentService"
-            android:exported="false">
-        </service>
+            android:exported="false"></service>
 
         <receiver
             android:name=".problem_2.MyReceiver"
             android:enabled="true"
-            android:exported="true">
-        </receiver>
+            android:exported="true"></receiver>
+        <receiver
+            android:name=".problem_3.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
     </application>
 
 </manifest>
