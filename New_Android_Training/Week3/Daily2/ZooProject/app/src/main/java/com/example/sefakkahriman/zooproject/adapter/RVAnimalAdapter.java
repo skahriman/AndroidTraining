@@ -47,6 +47,7 @@ public class RVAnimalAdapter extends RecyclerView.Adapter<RVAnimalAdapter.ViewHo
         Log.d(TAG, "onBindViewHolder: " + viewHolder.toString());
         Animal animal = animalList.get(i);
 
+        viewHolder.tvCategory.setText(animal.getCategory());
         viewHolder.tvName.setText(animal.getName());
         viewHolder.tvWeight.setText(String.valueOf(animal.getWeight()));
         viewHolder.tvSound.setText(animal.getSound());
@@ -55,6 +56,8 @@ public class RVAnimalAdapter extends RecyclerView.Adapter<RVAnimalAdapter.ViewHo
             public void onClick(View view) {
                 Toast.makeText(context, "You clicked " + animalList.get(i).getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, AnimalDetail.class);
+
+                intent.putExtra("category", animalList.get(i).getCategory());
                 intent.putExtra("name", animalList.get(i).getName());
                 intent.putExtra("weight", animalList.get(i).getWeight());
                 intent.putExtra("sound", animalList.get(i).getSound());
@@ -70,6 +73,7 @@ public class RVAnimalAdapter extends RecyclerView.Adapter<RVAnimalAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        private final TextView tvCategory;
         private final TextView tvName;
         private final TextView tvWeight;
         private final TextView tvSound;
@@ -78,6 +82,7 @@ public class RVAnimalAdapter extends RecyclerView.Adapter<RVAnimalAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            tvCategory = itemView.findViewById(R.id.tvCategory);
             tvName = itemView.findViewById(R.id.tvName);
             tvWeight = itemView.findViewById(R.id.tvWeight);
             tvSound = itemView.findViewById(R.id.tvSound);
