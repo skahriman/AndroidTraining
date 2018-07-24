@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "933233626586",
+    "firebase_url": "https://twetterfacebookauth.firebaseio.com",
+    "project_id": "twetterfacebookauth",
+    "storage_bucket": "twetterfacebookauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933233626586:android:1af8316cbb3a9b56",
+        "android_client_info": {
+          "package_name": "com.example.sefakkahriman.googletwetterfacebookauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933233626586-jt29tf1eg46i1aqbg6648lti7mcsbbe9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sefakkahriman.googletwetterfacebookauth",
+            "certificate_hash": "53d1a24658f7c04cf800ede23ab3360b38eb9a12"
+          }
+        },
+        {
+          "client_id": "933233626586-8j73925t7hk8gc482tgaro818ek2cb4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcGFH-If5g8eAvEQAuiA4WxjN7YuK3Xeg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933233626586-8j73925t7hk8gc482tgaro818ek2cb4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
