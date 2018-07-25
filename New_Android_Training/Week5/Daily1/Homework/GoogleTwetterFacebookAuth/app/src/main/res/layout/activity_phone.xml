@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneActivity">
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:digits="01234567809"
+        android:hint="Enter Phone"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonGetVerificationCode"
+        android:text="Get Verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"/>
+
+    <EditText
+        android:id="@+id/editTextCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="01234567809"
+        android:hint="Enter Code received"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:text="Sign In"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

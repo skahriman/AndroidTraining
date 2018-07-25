@@ -22,4 +22,11 @@
         android:layout_height="wrap_content"
         android:onClick="loginGoogle"/>
 
+    <Button
+        android:id="@+id/btnPhone"
+        android:text="Log in with Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="loginPhone"/>
+
 </LinearLayout>

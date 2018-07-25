@@ -9,6 +9,9 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseUser;
 
 import com.example.sefakkahriman.googletwetterfacebookauth.utils.AuthManager;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements AuthManager.ILoginInteraction {
 
@@ -53,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements AuthManager.ILogi
         mAuthManager.signInWithGoogle();
     }
 
+    public void loginPhone(View view) {
+        startActivity(new Intent(this, PhoneActivity.class));
+    }
+
     @Override
     public void onLoginSuccess(FirebaseUser user) {
         startSecondActivity();
@@ -62,4 +69,5 @@ public class MainActivity extends AppCompatActivity implements AuthManager.ILogi
     public void onLoginError(String error) {
         Toast.makeText(this, "Login failed: " + error, Toast.LENGTH_SHORT).show();
     }
+
 }

@@ -58,6 +58,10 @@ public class AuthManager {
         mGoogleManager.signIn();
     }
 
+    public void signInWithPhone() {
+
+    }
+
     public void signOut() {
         mAuth.signOut();
         mFacebookManager.signOut();
