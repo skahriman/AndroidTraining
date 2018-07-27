@@ -1,6 +1,5 @@
-package com.example.sefakkahriman.contentprovider;
+package com.example.sefakkahriman.locationandmaps;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -10,15 +9,20 @@ import android.util.Log;
 
 public class PermissionManager {
 
-    public static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 10;
+    public static final int MY_PERMISSIONS_REQUEST_ACCESS_LOCATION = 10;
     private static final String TAG = PermissionManager.class.getSimpleName() + "_TAG";
 
     Context context;
     Callback callback;
+    String currentPermission;
 
     public PermissionManager(Context context) {
         this.context = context;
         this.callback = (Callback) context;
+    }
+
+    public void setPermission(String permission) {
+        this.currentPermission = permission;
     }
 
     public void checkPermission() {
@@ -27,14 +31,14 @@ public class PermissionManager {
 
         // Here, thisActivity is the current activity
         if (ContextCompat.checkSelfPermission(context,
-                Manifest.permission.READ_CONTACTS)
+                currentPermission)
                 != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "checkPermission: Permission not granted");
 
             // Permission is not granted
             // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,
-                    Manifest.permission.READ_CONTACTS)) {
+                    currentPermission)) {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
@@ -43,17 +47,17 @@ public class PermissionManager {
                 // No explanation needed; request the permission
                 Log.d(TAG, "checkPermission: Request Permission");
                 ActivityCompat.requestPermissions((Activity) context,
-                        new String[]{Manifest.permission.READ_CONTACTS},
-                        MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+                        new String[]{currentPermission},
+                        MY_PERMISSIONS_REQUEST_ACCESS_LOCATION);
 
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // MY_PERMISSIONS_REQUEST_ACCESS_LOCATION is an
                 // app-defined int constant. The callback method gets the
                 // result of the request.
             }
         } else {
             Log.d(TAG, "checkPermission: Permission  Already granted");
             // Permission has already been granted
-            callback.onPermissionResults(MY_PERMISSIONS_REQUEST_READ_CONTACTS, true);
+            callback.onPermissionResults(MY_PERMISSIONS_REQUEST_ACCESS_LOCATION, true);
 
         }
 
@@ -63,7 +67,7 @@ public class PermissionManager {
                              String permissions[], int[] grantResults) {
 
         switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+            case MY_PERMISSIONS_REQUEST_ACCESS_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
