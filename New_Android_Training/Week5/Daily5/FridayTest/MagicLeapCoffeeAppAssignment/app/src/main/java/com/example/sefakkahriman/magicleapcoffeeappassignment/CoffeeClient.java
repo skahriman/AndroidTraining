@@ -2,6 +2,7 @@ package com.example.sefakkahriman.magicleapcoffeeappassignment;
 
 
 import com.example.sefakkahriman.magicleapcoffeeappassignment.model.CoffeeResponse;
+import com.example.sefakkahriman.magicleapcoffeeappassignment.model.DetailCoffeeResponse;
 
 import java.util.List;
 
@@ -10,12 +11,11 @@ import java.util.List;
         import retrofit2.http.Path;
 
 public interface CoffeeClient {
-//  "https://api.github.com/"
-//    @GET("/users/{user}/repos")
 
     @GET("/coffees")
     Call<List<CoffeeResponse>> getCoffees();
 
     @GET("/coffees/{coffeeID}")
-    Call<List<CoffeeResponse>> getDetailOfCoffee(@Path("coffeeID") String user);
+    Call<DetailCoffeeResponse> getDetailOfCoffee(@Path("coffeeID") String coffee);
+
 }
