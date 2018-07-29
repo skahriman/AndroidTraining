@@ -13,6 +13,9 @@ public interface CoffeeClient {
 //  "https://api.github.com/"
 //    @GET("/users/{user}/repos")
 
-    @GET("/coffees/{coffee}")
-    Call<List<CoffeeResponse>> reposForUser(@Path("coffee") String user);
+    @GET("/coffees")
+    Call<List<CoffeeResponse>> getCoffees();
+
+    @GET("/coffees/{coffeeID}")
+    Call<List<CoffeeResponse>> getDetailOfCoffee(@Path("coffeeID") String user);
 }
