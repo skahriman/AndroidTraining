@@ -14,12 +14,14 @@ public class LocalDataContract {
         public static final String CREATE_PERSON_TABLE
                 = "CREATE TABLE " + TABLE_PERSON + "(" +
                 Person.NAME + " TEXT, " +
-                Person.AGE + " AGE, " +
+                Person.AGE + " TEXT, " +
                 Person.GENDER + " TEXT)";
+
     }
 
-    public static class DML {
-        public static final String GET_ALL_PERSON = "SELECT * FROM PERSON" ;
+    public static class DML{
+        public static final String GET_ALL_PERSON = "SELECT * FROM " +
+                TABLE_PERSON;
     }
 
     public static class Person implements BaseColumns {

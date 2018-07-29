@@ -16,45 +16,48 @@
         <EditText
             android:id="@+id/etMain"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnSaveData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save data"
-            android:onClick="handleSharedPreferences"/>
+            android:onClick="handleSharedPreferences"
+            android:text="Save data"/>
 
         <Button
             android:id="@+id/btnGetData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get data"
-            android:onClick="handleSharedPreferences"/>
+            android:onClick="handleSharedPreferences"
+            android:text="Get data"/>
 
         <TextView
             android:id="@+id/tvMain"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"/>
 
-        <!-- SQL database-->
+
+        <!--SQL database-->
         <EditText
-            android:text="John Doe"
             android:id="@+id/etPersonName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="John Doe"/>
 
         <EditText
-            android:text="23"
             android:id="@+id/etPersonAge"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="23"/>
 
         <EditText
-            android:text="Male"
             android:id="@+id/etPersonGender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Male"/>
 
         <Button
             android:id="@+id/btnSavePerson"
@@ -64,40 +67,42 @@
             android:text="Save person"/>
 
         <Button
-            android:id="@+id/btnGelAllPersons"
+            android:id="@+id/btnGetAllPersons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="handlingDatabase"
-            android:text="Get All persons"/>
+            android:text="Get persons"/>
 
-        <!-- UI to tes Room database-->
+        <!--UI to test Room database-->
         <EditText
-            android:hint="ISBN"
             android:id="@+id/etBookISBN"
+            android:hint="isbn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:hint="Book Name"
-            android:id="@+id/etBookName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:hint="Book Author"
-            android:id="@+id/etBookAuthor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Save Book"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onSaveBook"/>
-        <Button
-            android:text="Get All Book"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onGetAllBooks"/>
+            android:layout_height="wrap_content"/>
 
+        <EditText
+            android:id="@+id/etBookName"
+            android:hint="Book name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etBookAuthor"
+            android:hint="Author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSaveBook"
+            android:text="Save Book"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onGetAllBooks"
+            android:text="Get All Book"/>
     </LinearLayout>
 
 </ScrollView>
-

@@ -21,6 +21,15 @@ public class Book {
         this.author = author;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "ISBN='" + ISBN + '\'' +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
+
     public String getISBN() {
         return ISBN;
     }
@@ -43,14 +52,5 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "ISBN='" + ISBN + '\'' +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                '}';
     }
 }

@@ -20,47 +20,51 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String MY_SHARED_PREF = "mySharedPref";
     private TextView tvMain;
-    private TextView etMain;
+    private EditText etMain;
+    private LocalDataSource localDataSource;
     private EditText etPersonName;
     private EditText etPersonAge;
     private EditText etPersonGender;
-    private LocalDataSource localDataSource;
     private EditText etBookISBN;
     private EditText etBookAuthor;
     private EditText etBookName;
     private RoomHelper roomHelper;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bindViews();
 
-        tvMain = findViewById(R.id.tvMain);
-        etMain = findViewById(R.id.etMain);
-
-        etPersonName = findViewById(R.id.etPersonName);
-        etPersonAge = findViewById(R.id.etPersonAge);
-        etPersonGender = findViewById(R.id.etPersonGender);
-
+//        using sqlite
         localDataSource = new LocalDataSource(this);
 
-        //for room database
-        etBookISBN = findViewById(R.id.etBookISBN);
-        etBookAuthor = findViewById(R.id.etBookAuthor);
-        etBookName = findViewById(R.id.etBookName);
-
-        //using sqlite
-        localDataSource = new LocalDataSource(this);
-
-        //using room ORM
+//        using room ORM
         roomHelper = new RoomHelper(this);
 
     }
 
+    private void bindViews() {
+//        for shared preferences
+        tvMain = findViewById(R.id.tvMain);
+        etMain = findViewById(R.id.etMain);
+
+//        for database
+        etPersonName = findViewById(R.id.etPersonName);
+        etPersonAge = findViewById(R.id.etPersonAge);
+        etPersonGender = findViewById(R.id.etPersonGender);
+
+//        for room database
+        etBookISBN = findViewById(R.id.etBookISBN);
+        etBookAuthor = findViewById(R.id.etBookAuthor);
+        etBookName = findViewById(R.id.etBookName);
+    }
+
     public void handleSharedPreferences(View view) {
+
         SharedPreferences sharedPreferences =
                 getSharedPreferences(MY_SHARED_PREF, Context.MODE_PRIVATE);
+
 
         switch (view.getId()) {
             case R.id.btnSaveData:
@@ -69,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("etMain", etString);
-                //we can use editor.apply() also
-                boolean isSaved = editor.commit();
+                boolean isSaved  = editor.commit();
+
                 if (isSaved) {
                     Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
                 }
@@ -80,10 +84,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnGetData:
 
                 String data = sharedPreferences
-                        .getString("etMain", "default value");
+                        .getString("etMain","default value");
                 tvMain.setText(data);
+
                 break;
+
         }
+
     }
 
     public void handlingDatabase(View view) {
@@ -91,23 +98,29 @@ public class MainActivity extends AppCompatActivity {
         Person person = new Person(
                 etPersonName.getText().toString(),
                 etPersonAge.getText().toString(),
-                etPersonGender.getText().toString());
+                etPersonGender.getText().toString()
+        );
 
         switch (view.getId()) {
 
             case R.id.btnSavePerson:
+
                 long rowid = localDataSource.savePerson(person);
                 if (rowid > 0) {
-                    Toast.makeText(this, "Person Saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Person saved", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Not saved", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Toast.makeText(this, "Not Saved", Toast.LENGTH_SHORT).show();
-                }
+
+
                 break;
 
-            case R.id.btnGelAllPersons:
+            case R.id.btnGetAllPersons:
+
                 List<Person> personList = localDataSource.getAllPerson();
+
                 Toast.makeText(this, personList.toString(), Toast.LENGTH_SHORT).show();
+
                 break;
         }
     }
@@ -116,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         Book book = new Book(etBookISBN.getText().toString(),
                 etBookName.getText().toString(),
                 etBookAuthor.getText().toString());
+
         roomHelper.saveBook(book);
     }
 

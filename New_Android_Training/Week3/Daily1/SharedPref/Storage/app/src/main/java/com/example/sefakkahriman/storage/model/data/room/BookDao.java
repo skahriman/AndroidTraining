@@ -14,7 +14,4 @@ public interface BookDao {
 
     @Query("SELECT * FROM Book")
     List<Book> getAllBooks();
-
 }
-
-

@@ -12,6 +12,15 @@ public class Person {
         this.gender = gender;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
@@ -32,16 +41,7 @@ public class Person {
         return gender;
     }
 
-    public void setGenter(String genter) {
-        this.gender = genter;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age='" + age + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
