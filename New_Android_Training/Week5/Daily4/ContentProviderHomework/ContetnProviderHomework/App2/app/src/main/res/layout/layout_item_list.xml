@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"/>
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"/>
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"/>
+
+        <EditText
+            android:id="@+id/etGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gender"/>
+
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age"/>
+
+        <Button
+            android:id="@+id/btnSavePerson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="handlingDatabase"
+            android:text="Save person"/>
+
+        <Button
+            android:id="@+id/btnGetAllPersons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="handlingDatabase"
+            android:text="Get persons"/>
+
+        <Button
+            android:id="@+id/btnContentProvider"
+            android:text="Get all Data Using Content Provider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="getDataUsingContentProvider"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
