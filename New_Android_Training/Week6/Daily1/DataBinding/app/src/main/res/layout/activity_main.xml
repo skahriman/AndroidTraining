@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <!--data-->
+    <data>
+        <!--declare variables to be used-->
+        <variable
+            name="person"
+            type="com.example.sefakkahriman.databinding.Person"/>
+
+        <variable
+            name="person_view_model"
+            type="com.example.sefakkahriman.databinding.PersonViewModel"/>
+
+    </data>
+
+    <!--view (actual layout of the screen-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PersonActivity">
+
+        <!--Person name-->
+
+        <TextView
+            android:text="@{person.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--person gender-->
+
+        <TextView
+            android:text="@{person.gender}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--person age-->
+
+        <TextView
+            android:text="@{person.age}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{view -> person_view_model.onPersonClicked(view, person)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:addTextChangedListener="@{person.nameWatcher}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{person.nameObs}"/>
+
+    </LinearLayout>
+
+</layout>
