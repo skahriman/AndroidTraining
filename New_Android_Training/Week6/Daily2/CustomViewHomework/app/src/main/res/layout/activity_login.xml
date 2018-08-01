@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <com.example.sefakkahriman.customviewhomework.MyRectangle
+    <com.example.sefakkahriman.customviewhomework.MyCustomButton
         android:id="@+id/myRectangleView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
