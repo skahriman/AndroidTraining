@@ -36,11 +36,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <fragment
-        class="com.google.android.gms.maps.MapFragment"
-        tools:context=".MainActivity"
-        android:id="@+id/map"
+    <FrameLayout
+        android:id="@+id/fragmentHolder1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="200dp"/>
 
 </LinearLayout>

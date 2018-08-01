@@ -220,14 +220,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     public void onClickConvertButton(View view) {
 
-        mMapFragment.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                mMapFragment.getMapAsync(this);
-            }
-        });
-
-
+        MyMapFragment mapFragment = new MyMapFragment();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragmentHolder1, mapFragment, MyMapFragment.STRING_TAG)
+                .addToBackStack(MyMapFragment.STRING_TAG)//using this we can go back to the stack
+                .commit();
     }
 
 
