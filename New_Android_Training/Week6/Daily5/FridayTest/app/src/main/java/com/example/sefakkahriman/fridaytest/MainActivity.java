@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements Fragment1.OnFragm
     public void onFragmentInteraction(String zipCode) {
         Utils.hideKeyboard(this);
         fragment2.getList(zipCode);
-        Toast.makeText(this, zipCode, Toast.LENGTH_SHORT).show();
     }
 }
 
