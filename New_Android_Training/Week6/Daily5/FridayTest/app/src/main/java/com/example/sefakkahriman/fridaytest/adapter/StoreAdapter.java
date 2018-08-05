@@ -7,20 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.sefakkahriman.fridaytest.model.Store;
-
 import java.util.List;
 
 import com.example.sefakkahriman.fridaytest.R;
+import com.example.sefakkahriman.fridaytest.model.Store;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder>{
 
     List<Store> storeList;
     Context context;
 
-    public StoreAdapter(List<Store> storeList, Context context) {
-        this.storeList = storeList;
+    public StoreAdapter(Context context, List<Store> storeList) {
         this.context = context;
+        this.storeList = storeList;
     }
 
     @Override
@@ -36,7 +35,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.storeId.setText(storeList.get(position).getStoreId());
+        holder.storeId.setText(storeList.get(position).getStoreID());
         holder.addressDesc.setText(storeList.get(position).getAddressDescription());
         holder.hoursDesc.setText(storeList.get(position).getHoursDescription());
     }
@@ -44,6 +43,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder>{
     @Override
     public int getItemCount() {
         return storeList.size();
+
     }
 
 
@@ -59,8 +59,6 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder>{
             storeId = itemView.findViewById(R.id.tvStoreId);
             addressDesc = itemView.findViewById(R.id.tvAddressDescription);
             hoursDesc = itemView.findViewById(R.id.tvHoursDescription);
-
-
         }
     }
 }

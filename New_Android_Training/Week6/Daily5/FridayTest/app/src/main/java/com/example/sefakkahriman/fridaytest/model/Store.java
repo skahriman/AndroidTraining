@@ -1,47 +1,49 @@
 package com.example.sefakkahriman.fridaytest.model;
 
-public class Store {
+import com.google.gson.annotations.SerializedName;
 
-    private String storeId;
-    private String addressDescription;
-    private String  hoursDescription;
+public class Store{
 
-    public Store(String storeId, String addressDescription, String hoursDescription) {
-        this.storeId = storeId;
-        this.addressDescription = addressDescription;
-        this.hoursDescription = hoursDescription;
-    }
+	@SerializedName("HoursDescription")
+	private String hoursDescription;
 
-    public String getStoreId() {
-        return storeId;
-    }
+	@SerializedName("StoreID")
+	private String storeID;
 
-    public void setStoreId(String storeId) {
-        this.storeId = storeId;
-    }
+	@SerializedName("AddressDescription")
+	private String addressDescription;
 
-    public String getAddressDescription() {
-        return addressDescription;
-    }
+	public void setHoursDescription(String hoursDescription){
+		this.hoursDescription = hoursDescription;
+	}
 
-    public void setAddressDescription(String addressDescription) {
-        this.addressDescription = addressDescription;
-    }
+	public String getHoursDescription(){
+		return hoursDescription;
+	}
 
-    public String getHoursDescription() {
-        return hoursDescription;
-    }
+	public void setStoreID(String storeID){
+		this.storeID = storeID;
+	}
 
-    public void setHoursDescription(String hoursDescription) {
-        this.hoursDescription = hoursDescription;
-    }
+	public String getStoreID(){
+		return storeID;
+	}
 
-    @Override
-    public String toString() {
-        return "Store{" +
-                "storeId='" + storeId + '\'' +
-                ", addressDescription='" + addressDescription + '\'' +
-                ", hoursDescription='" + hoursDescription + '\'' +
-                '}';
-    }
+	public void setAddressDescription(String addressDescription){
+		this.addressDescription = addressDescription;
+	}
+
+	public String getAddressDescription(){
+		return addressDescription;
+	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"StoresItem{" + 
+			"hoursDescription = '" + hoursDescription + '\'' +
+			",storeID = '" + storeID + '\'' +
+			",addressDescription = '" + addressDescription + '\'' +
+			"}";
+		}
 }
