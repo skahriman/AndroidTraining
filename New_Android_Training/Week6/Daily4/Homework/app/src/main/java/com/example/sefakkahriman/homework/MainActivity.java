@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.sefakkahriman.homework.problem1.MyTimberActivity;
 import com.example.sefakkahriman.homework.problem2.BarcodeReaderActivity;
 import com.example.sefakkahriman.homework.problem3.LeakCanaryActivity;
+import com.example.sefakkahriman.homework.problem4.FurryAnalyticsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickLeakCanary(View view) {
         startActivity(new Intent(this, LeakCanaryActivity.class));
+    }
+
+    public void onClickFurryAnalytics(View view) {
+        startActivity(new Intent(this, FurryAnalyticsActivity.class));
     }
 }

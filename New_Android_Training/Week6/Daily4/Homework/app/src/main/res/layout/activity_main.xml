@@ -26,4 +26,10 @@
         android:layout_height="wrap_content"
         android:onClick="onClickLeakCanary"/>
 
+    <Button
+        android:text="Go to Furry Analytics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickFurryAnalytics"/>
+
 </LinearLayout>

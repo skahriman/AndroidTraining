@@ -5,12 +5,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".problem3.MyCustomApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".problem3.MyCustomApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".problem1.MyTimberActivity" />
         <activity android:name=".problem2.BarcodeReaderActivity" />
-        <activity android:name=".problem3.LeakCanaryActivity"></activity>
+        <activity android:name=".problem3.LeakCanaryActivity" />
+        <activity android:name=".problem4.FurryAnalyticsActivity"></activity>
     </application>
 
 </manifest>
