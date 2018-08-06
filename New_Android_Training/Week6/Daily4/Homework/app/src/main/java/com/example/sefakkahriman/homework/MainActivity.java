@@ -3,10 +3,11 @@ package com.example.sefakkahriman.homework;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import timber.log.Timber;
+import com.example.sefakkahriman.homework.problem1.MyTimberActivity;
+import com.example.sefakkahriman.homework.problem2.BarcodeReaderActivity;
+import com.example.sefakkahriman.homework.problem3.LeakCanaryActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,5 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickReadBarcode(View view) {
         startActivity(new Intent(this, BarcodeReaderActivity.class));
+    }
+
+    public void onClickLeakCanary(View view) {
+        startActivity(new Intent(this, LeakCanaryActivity.class));
     }
 }

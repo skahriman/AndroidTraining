@@ -1,4 +1,4 @@
-package com.example.sefakkahriman.homework;
+package com.example.sefakkahriman.homework.problem2;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.sefakkahriman.homework.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 

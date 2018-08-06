@@ -1,7 +1,9 @@
-package com.example.sefakkahriman.homework;
+package com.example.sefakkahriman.homework.problem1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.sefakkahriman.homework.R;
 
 import timber.log.Timber;
 
