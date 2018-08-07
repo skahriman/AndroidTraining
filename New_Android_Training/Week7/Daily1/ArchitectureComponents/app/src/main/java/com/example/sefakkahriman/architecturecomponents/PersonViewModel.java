@@ -11,8 +11,7 @@ import com.example.sefakkahriman.architecturecomponents.model.PersonDataSource;
 
 public class PersonViewModel extends ViewModel {
 
-
-    MutableLiveData<Person> personMutableLiveData;
+    private MutableLiveData<Person> personMutableLiveData;
 
     public LiveData getPerson() {
         if (personMutableLiveData == null) {
@@ -27,7 +26,6 @@ public class PersonViewModel extends ViewModel {
     }
 
     public void setPerson(Person person) {
-
         personMutableLiveData.setValue(person);
     }
 }
