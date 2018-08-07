@@ -148,9 +148,6 @@ public class GithubRepoResponse{
 	@SerializedName("has_pages")
 	private boolean hasPages;
 
-	@SerializedName("owner")
-	private Owner owner;
-
 	@SerializedName("commits_url")
 	private String commitsUrl;
 
@@ -412,10 +409,6 @@ public class GithubRepoResponse{
 		return hasPages;
 	}
 
-	public Owner getOwner(){
-		return owner;
-	}
-
 	public String getCommitsUrl(){
 		return commitsUrl;
 	}
@@ -507,83 +500,4 @@ public class GithubRepoResponse{
 	public int getForksCount(){
 		return forksCount;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"GithubRepoResponse{" + 
-			"stargazers_count = '" + stargazersCount + '\'' + 
-			",pushed_at = '" + pushedAt + '\'' + 
-			",subscription_url = '" + subscriptionUrl + '\'' + 
-			",language = '" + language + '\'' + 
-			",branches_url = '" + branchesUrl + '\'' + 
-			",issue_comment_url = '" + issueCommentUrl + '\'' + 
-			",labels_url = '" + labelsUrl + '\'' + 
-			",subscribers_url = '" + subscribersUrl + '\'' + 
-			",releases_url = '" + releasesUrl + '\'' + 
-			",svn_url = '" + svnUrl + '\'' + 
-			",id = '" + id + '\'' + 
-			",forks = '" + forks + '\'' + 
-			",archive_url = '" + archiveUrl + '\'' + 
-			",git_refs_url = '" + gitRefsUrl + '\'' + 
-			",forks_url = '" + forksUrl + '\'' + 
-			",statuses_url = '" + statusesUrl + '\'' + 
-			",ssh_url = '" + sshUrl + '\'' + 
-			",license = '" + license + '\'' + 
-			",full_name = '" + fullName + '\'' + 
-			",size = '" + size + '\'' + 
-			",languages_url = '" + languagesUrl + '\'' + 
-			",html_url = '" + htmlUrl + '\'' + 
-			",collaborators_url = '" + collaboratorsUrl + '\'' + 
-			",clone_url = '" + cloneUrl + '\'' + 
-			",name = '" + name + '\'' + 
-			",pulls_url = '" + pullsUrl + '\'' + 
-			",default_branch = '" + defaultBranch + '\'' + 
-			",hooks_url = '" + hooksUrl + '\'' + 
-			",trees_url = '" + treesUrl + '\'' + 
-			",tags_url = '" + tagsUrl + '\'' + 
-			",private = '" + jsonMemberPrivate + '\'' + 
-			",contributors_url = '" + contributorsUrl + '\'' + 
-			",has_downloads = '" + hasDownloads + '\'' + 
-			",notifications_url = '" + notificationsUrl + '\'' + 
-			",open_issues_count = '" + openIssuesCount + '\'' + 
-			",description = '" + description + '\'' + 
-			",created_at = '" + createdAt + '\'' + 
-			",watchers = '" + watchers + '\'' + 
-			",keys_url = '" + keysUrl + '\'' + 
-			",deployments_url = '" + deploymentsUrl + '\'' + 
-			",has_projects = '" + hasProjects + '\'' + 
-			",archived = '" + archived + '\'' + 
-			",has_wiki = '" + hasWiki + '\'' + 
-			",updated_at = '" + updatedAt + '\'' + 
-			",comments_url = '" + commentsUrl + '\'' + 
-			",stargazers_url = '" + stargazersUrl + '\'' + 
-			",git_url = '" + gitUrl + '\'' + 
-			",has_pages = '" + hasPages + '\'' + 
-			",owner = '" + owner + '\'' + 
-			",commits_url = '" + commitsUrl + '\'' + 
-			",compare_url = '" + compareUrl + '\'' + 
-			",git_commits_url = '" + gitCommitsUrl + '\'' + 
-			",blobs_url = '" + blobsUrl + '\'' + 
-			",git_tags_url = '" + gitTagsUrl + '\'' + 
-			",merges_url = '" + mergesUrl + '\'' + 
-			",downloads_url = '" + downloadsUrl + '\'' + 
-			",has_issues = '" + hasIssues + '\'' + 
-			",url = '" + url + '\'' + 
-			",contents_url = '" + contentsUrl + '\'' + 
-			",mirror_url = '" + mirrorUrl + '\'' + 
-			",milestones_url = '" + milestonesUrl + '\'' + 
-			",teams_url = '" + teamsUrl + '\'' + 
-			",fork = '" + fork + '\'' + 
-			",issues_url = '" + issuesUrl + '\'' + 
-			",events_url = '" + eventsUrl + '\'' + 
-			",issue_events_url = '" + issueEventsUrl + '\'' + 
-			",assignees_url = '" + assigneesUrl + '\'' + 
-			",open_issues = '" + openIssues + '\'' + 
-			",watchers_count = '" + watchersCount + '\'' + 
-			",node_id = '" + nodeId + '\'' + 
-			",homepage = '" + homepage + '\'' + 
-			",forks_count = '" + forksCount + '\'' + 
-			"}";
-		}
 }

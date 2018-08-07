@@ -1,9 +1,7 @@
 package com.example.sefakkahriman.retrofitdemo2;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("com.robohorse.robopojogenerator")
 public class Owner{
 
 	@SerializedName("gists_url")
