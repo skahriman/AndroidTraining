@@ -1,6 +1,5 @@
 package com.exmaple.android.recyclerviewwithinterface;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,16 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    Context context;
-    String[] personList;
+    private String[] personList;
+    final ListItemClickListener mListItemClickListener;
 
-    public RecyclerViewAdapter(Context context, String[] persons) {
-        this.context = context;
+    public interface ListItemClickListener {
+        void onListItemClick(int clickedPosition);
+    }
+
+    public RecyclerViewAdapter(String[] persons, ListItemClickListener listener) {
         this.personList = persons;
+        this.mListItemClickListener = listener;
     }
 
     @NonNull
@@ -39,11 +40,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return personList.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView mTextView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mTextView = itemView.findViewById(R.id.tv_text);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int clickedPosition = getAdapterPosition();
+            mListItemClickListener.onListItemClick(clickedPosition);
         }
     }
 }
